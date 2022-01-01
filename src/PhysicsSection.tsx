@@ -61,6 +61,14 @@ export const PhysicsSection = () => {
               />
             </div>
           </div>
+          <br />
+          <p>
+            This project gave me the chance to put my past experience with{" "}
+            <b>video game development</b> into practice, as well as practice
+            using <b>React</b>, <b>Typescript</b>, and <b>CSS</b>. I also got to
+            practice <b>designing streamlined frontend experiences</b> and{" "}
+            <b>targeting a young adult audience</b>.
+          </p>
         </div>
       }
       secondSectionTitle={"Background Research"}

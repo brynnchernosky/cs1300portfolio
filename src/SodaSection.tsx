@@ -102,6 +102,12 @@ export const SodaSection = () => {
               </Carousel>
             </div>
           </div>
+          <p>
+            This project gave me the chance to practice using <b>Balsamiq</b>{" "}
+            and <b>Canva</b>. I also got to practice{" "}
+            <b>performing user research</b> and{" "}
+            <b>targeting a young adult audience</b>.
+          </p>
         </div>
       }
       secondSectionTitle={"Observations"}
@@ -236,7 +242,8 @@ export const SodaSection = () => {
         <div>
           <p>
             From observing and speaking to users, I developed the following two
-            personas: Kate and Dylan.
+            personas: Kate and Dylan, creating graphics for each of them in{" "}
+            <b>Canva</b>.
           </p>
           <div className="empathyMapWrapper">
             <p className="personaQuote">&quot;Please work.&quot; </p>

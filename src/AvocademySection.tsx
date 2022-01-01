@@ -217,6 +217,13 @@ export const AvocademySection = () => {
             sketching, low fidelity prototypes, and high fidelity prototypes,
             receiving constructive feedback from peers and users along the way.
           </p>
+          <br />
+          <p>
+            This project gave me the chance to put my past experience with{" "}
+            <b>video game development</b> into practice, as well as practice
+            using <b>Balsamiq</b> and <b>Figma</b>. I also got to practice{" "}
+            <b>designing streamlined frontend experiences</b>.
+          </p>
         </div>
       }
       secondSectionTitle={"Low-Fidelity Prototypes"}

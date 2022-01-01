@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import { Section } from "./Section";
+import List from "@mui/material/List";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Collapse from "@mui/material/Collapse";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
 
 export const CraigslistSection = () => {
   const [showStandardLabels, setShowStandardLabels] = useState<boolean>(false);
@@ -19,6 +26,32 @@ export const CraigslistSection = () => {
     useState<boolean>(false);
   const [showMediumHighDivs, setShowMediumHighDivs] = useState<boolean>(false);
 
+  const [clutterOpen, setClutterOpen] = useState<boolean>(false);
+  const [navOpen, setNavOpen] = useState<boolean>(false);
+  const [discoverOpen, setDiscoverOpen] = useState<boolean>(false);
+  const [profOpen, setProfOpen] = useState<boolean>(false);
+  const [accOpen, setAccOpen] = useState<boolean>(false);
+
+  const listDropdown = {
+    width: "60vw",
+    bgcolor: "background.paper",
+    borderStyle: "solid",
+    borderWidth: "1px",
+    padding: "0px",
+    marginBottom: "-1px",
+  };
+  const dropdownContent = {
+    padding: "10px",
+    borderTopStyle: "solid",
+    borderTopWidth: "1px",
+  };
+  const listDropdownText = {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: "3em",
+    width: "60vw",
+  };
   return (
     <Section
       color={[0, 51, 102]}
@@ -47,134 +80,229 @@ export const CraigslistSection = () => {
           </div>
           <br></br>
           <h4>Usability Issues</h4>
-          <ul>
-            <li>
-              <strong>Clutter</strong>
-            </li>
-            <ul>
-              <li>
-                The homepage for a given location is cluttered and overwhelming,
-                with far too much content.
-              </li>
-              <li>
-                Although this allows users to only make a limited number of
-                clicks to reach their intended section, it comes at the expense
-                of organization, and efficiency gained by having fewer clicks is
-                likely lost in the amount of time users take to find their
-                destination.
-              </li>
-              <li>
-                This issue is compounded by a too small font and insufficient
-                whitespace.
-              </li>
-            </ul>
-            <li>
-              <strong>Navigation</strong>
-            </li>
-            <ul>
-              <li>
-                Navigation is also difficult. There are insufficient cues to
-                tell users where to look, with attention being drawn
-                alternatively between bolded section headers in the center, the
-                event calendar on the top left, and bolded other locations on
-                the bottom right.
-              </li>
-              <li>
-                Within a given section, there are arbitrarily one, two, or three
-                columns of content.
-              </li>
-              <li>
-                For experienced users who only come to the site for a single
-                purpose, this isn&apos;t a big deal, but for new users or users
-                wishing to go to unfamiliar sections of the webpage, this makes
-                navigation a pain.
-              </li>
-              <li>
-                Memorability is also limited due to a lack of visual landmarks
-                aside from the calendar in the upper left.
-              </li>
-            </ul>
-            <li>
-              <strong>Exploration</strong>
-            </li>
-            <ul>
-              <li>
-                In general, the present layout is suited for users that have a
-                specific intention in coming to the webpage versus users without
-                a particular reason for visiting who want to see what the site
-                has to offer.
-              </li>
-              <li>
-                Similar webpages based on user-created content will often
-                display articles or posts on the homepage to aid in exploration,
-                but that&apos;s not present here.{" "}
-              </li>
-            </ul>
-            <li>
-              <strong>Professionalism</strong>
-            </li>
-            <ul>
-              <li>
-                There&apos;s a general lack of professionalism in the design.
-                While blue text and all lowercase letters is a branding
-                strategy, it makes the webpage look less professional and less
-                trustworthy.{" "}
-              </li>
-              <li>
-                Rather than being an issue of only aesthetic importance, this
-                directly influences usability—users that don&apos;t trust a
-                webpage won&apos;t be inclined to use it.
-              </li>
-            </ul>
-          </ul>
-          <br></br>
-          <h4>Accessibility Issues</h4>
-          <ul>
-            <li>
-              <strong>Elements</strong>
-            </li>
-            <ul>
-              <li>
-                The search bar is missing a label, which means it may not be
-                properly presented to screen reader users.{" "}
-              </li>
-              <li>
-                The document language also isn&apos;t identified, which can
-                cause issues for screen readers and automatic translation.
-              </li>
-              <li> The h2 heading level is skipped.</li>
-            </ul>
-            <li>
-              <strong>Styling</strong>
-            </li>
-            <ul>
-              <li>
-                The default font is small; this can be addressed externally by
-                changing the browser&apos;s default font size, but this messes
-                up the webpage styling, with the rightmost column pushed
-                awkwardly to the bottom left.{" "}
-              </li>
-              <li>
-                Almost all of the elements are links, so the small font size and
-                lack of whitespace mean that users could easily click the wrong
-                link by accident.
-              </li>
-            </ul>
-            <li>
-              <strong>Content</strong>
-            </li>
-            <ul>
-              <li>
-                Because there&apos;s so much content, it takes a long time to
-                tab through everything when navigating the webpage without a
-                mouse.
-              </li>
-              <li>
-                The tab ordering iterates through the left column first, whereas
-                most users probably care more about the center area.
-              </li>
-            </ul>
-          </ul>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              marginTop: "10px",
+            }}
+          >
+            <List
+              sx={listDropdown}
+              component="nav"
+              aria-labelledby="nested-list-subheader"
+            >
+              <ListItemButton onClick={() => setClutterOpen(!clutterOpen)}>
+                <div style={listDropdownText}>
+                  <p>
+                    <b>Clutter</b>
+                  </p>
+                  {clutterOpen ? <ExpandLess /> : <ExpandMore />}
+                </div>
+              </ListItemButton>
+              <Collapse in={clutterOpen} timeout="auto" unmountOnExit>
+                <List component="div" sx={dropdownContent}>
+                  <ul>
+                    <li>
+                      The homepage for a given location is cluttered and
+                      overwhelming, with far too much content.
+                    </li>
+                    <li>
+                      Although this allows users to only make a limited number
+                      of clicks to reach their intended section, it comes at the
+                      expense of organization, and efficiency gained by having
+                      fewer clicks is likely lost in the amount of time users
+                      take to find their destination.
+                    </li>
+                    <li>
+                      This issue is compounded by a too small font and
+                      insufficient whitespace.
+                    </li>
+                  </ul>
+                </List>
+              </Collapse>
+            </List>
+            <List
+              sx={listDropdown}
+              component="nav"
+              aria-labelledby="nested-list-subheader"
+            >
+              <ListItemButton onClick={() => setNavOpen(!navOpen)}>
+                <div style={listDropdownText}>
+                  <p>
+                    <b>Navigability</b>
+                  </p>
+                  {navOpen ? <ExpandLess /> : <ExpandMore />}
+                </div>
+              </ListItemButton>
+              <Collapse in={navOpen} timeout="auto" unmountOnExit>
+                <List component="div" sx={dropdownContent}>
+                  <ul>
+                    <li>
+                      Navigation is also difficult. There are insufficient cues
+                      to tell users where to look, with attention being drawn
+                      alternatively between bolded section headers in the
+                      center, the event calendar on the top left, and bolded
+                      other locations on the bottom right.
+                    </li>
+                    <li>
+                      Within a given section, there are arbitrarily one, two, or
+                      three columns of content.
+                    </li>
+                    <li>
+                      For experienced users who only come to the site for a
+                      single purpose, this isn&apos;t a big deal, but for new
+                      users or users wishing to go to unfamiliar sections of the
+                      webpage, this makes navigation a pain.
+                    </li>
+                    <li>
+                      Memorability is also limited due to a lack of visual
+                      landmarks aside from the calendar in the upper left.
+                    </li>
+                  </ul>
+                </List>
+              </Collapse>
+            </List>
+            <List
+              sx={listDropdown}
+              component="nav"
+              aria-labelledby="nested-list-subheader"
+            >
+              <ListItemButton onClick={() => setDiscoverOpen(!discoverOpen)}>
+                <div style={listDropdownText}>
+                  <p>
+                    <b>Discoverability</b>
+                  </p>
+                  {discoverOpen ? <ExpandLess /> : <ExpandMore />}
+                </div>
+              </ListItemButton>
+              <Collapse in={discoverOpen} timeout="auto" unmountOnExit>
+                <List component="div" sx={dropdownContent}>
+                  <ul>
+                    <li>
+                      Navigation is also difficult. There are insufficient cues
+                      to tell users where to look, with attention being drawn
+                      alternatively between bolded section headers in the
+                      center, the event calendar on the top left, and bolded
+                      other locations on the bottom right.
+                    </li>
+                    <li>
+                      Within a given section, there are arbitrarily one, two, or
+                      three columns of content.
+                    </li>
+                    <li>
+                      For experienced users who only come to the site for a
+                      single purpose, this isn&apos;t a big deal, but for new
+                      users or users wishing to go to unfamiliar sections of the
+                      webpage, this makes navigation a pain.
+                    </li>
+                    <li>
+                      Memorability is also limited due to a lack of visual
+                      landmarks aside from the calendar in the upper left.
+                    </li>
+                  </ul>
+                </List>
+              </Collapse>
+            </List>
+            <List
+              sx={listDropdown}
+              component="nav"
+              aria-labelledby="nested-list-subheader"
+            >
+              <ListItemButton onClick={() => setProfOpen(!profOpen)}>
+                <div style={listDropdownText}>
+                  <p>
+                    <b>Professionalism</b>
+                  </p>
+                  {profOpen ? <ExpandLess /> : <ExpandMore />}
+                </div>
+              </ListItemButton>
+              <Collapse in={profOpen} timeout="auto" unmountOnExit>
+                <List component="div" sx={dropdownContent}>
+                  <ul>
+                    <li>
+                      There&apos;s a general lack of professionalism in the
+                      design. While blue text and all lowercase letters is a
+                      branding strategy, it makes the webpage look less
+                      professional and less trustworthy.{" "}
+                    </li>
+                    <li>
+                      Rather than being an issue of only aesthetic importance,
+                      this directly influences usability—users that don&apos;t
+                      trust a webpage won&apos;t be inclined to use it.
+                    </li>
+                  </ul>
+                </List>
+              </Collapse>
+            </List>
+            <List
+              sx={listDropdown}
+              component="nav"
+              aria-labelledby="nested-list-subheader"
+            >
+              <ListItemButton onClick={() => setAccOpen(!accOpen)}>
+                <div style={listDropdownText}>
+                  <p>
+                    <b>Accessibility</b>
+                  </p>
+                  {accOpen ? <ExpandLess /> : <ExpandMore />}
+                </div>
+              </ListItemButton>
+              <Collapse in={accOpen} timeout="auto" unmountOnExit>
+                <List component="div" sx={dropdownContent}>
+                  <ul>
+                    <li>
+                      <strong>Elements</strong>
+                    </li>
+                    <ul>
+                      <li>
+                        The search bar is missing a label, which means it may
+                        not be properly presented to screen reader users.{" "}
+                      </li>
+                      <li>
+                        The document language also isn&apos;t identified, which
+                        can cause issues for screen readers and automatic
+                        translation.
+                      </li>
+                      <li> The h2 heading level is skipped.</li>
+                    </ul>
+                    <li>
+                      <strong>Styling</strong>
+                    </li>
+                    <ul>
+                      <li>
+                        The default font is small; this can be addressed
+                        externally by changing the browser&apos;s default font
+                        size, but this messes up the webpage styling, with the
+                        rightmost column pushed awkwardly to the bottom left.{" "}
+                      </li>
+                      <li>
+                        Almost all of the elements are links, so the small font
+                        size and lack of whitespace mean that users could easily
+                        click the wrong link by accident.
+                      </li>
+                    </ul>
+                    <li>
+                      <strong>Content</strong>
+                    </li>
+                    <ul>
+                      <li>
+                        Because there&apos;s so much content, it takes a long
+                        time to tab through everything when navigating the
+                        webpage without a mouse.
+                      </li>
+                      <li>
+                        The tab ordering iterates through the left column first,
+                        whereas most users probably care more about the center
+                        area.
+                      </li>
+                    </ul>
+                  </ul>
+                </List>
+              </Collapse>
+            </List>
+          </div>
           <br></br>
           <h4>Redesign</h4>
           <p>
@@ -184,6 +312,13 @@ export const CraigslistSection = () => {
             user interfaces for social media platforms like Reddit and Twitter
             and news platforms like <em>The Wall Street Journal</em> and{" "}
             <em>The New York Times</em>.
+          </p>
+          <br />
+          <p>
+            This project gave me the chance to practice using <b>Balsamiq</b>,{" "}
+            <b>Figma</b>, <b>HTML</b>, and <b>CSS</b>. I also got to practice{" "}
+            <b>designing streamlined frontend experiences</b> and{" "}
+            <b>targeting a young adult audience</b>.
           </p>
         </div>
       }
@@ -203,7 +338,7 @@ export const CraigslistSection = () => {
               onClick={() => {
                 setShowStandardLabels(!showStandardLabels);
               }}
-              style={{ margin: "5px" }}
+              style={{ marginLeft: "5px", marginBottom: "10px" }}
             >
               Toggle labels
             </button>
@@ -290,7 +425,7 @@ export const CraigslistSection = () => {
               onClick={() => {
                 setShowMediumLabels(!showMediumLabels);
               }}
-              style={{ margin: "5px" }}
+              style={{ marginLeft: "5px", marginBottom: "10px" }}
             >
               Toggle labels
             </button>
@@ -329,7 +464,7 @@ export const CraigslistSection = () => {
               onClick={() => {
                 setShowSmallLabels(!showSmallLabels);
               }}
-              style={{ margin: "5px" }}
+              style={{ marginLeft: "5px", marginBottom: "10px" }}
             >
               Toggle labels
             </button>
@@ -410,7 +545,7 @@ export const CraigslistSection = () => {
               setShowStandardHighLabels(false);
               setShowStandardHighDivs(false);
             }}
-            style={{ margin: "5px" }}
+            style={{ marginLeft: "5px", marginBottom: "10px" }}
           >
             Show content only
           </button>
@@ -419,7 +554,7 @@ export const CraigslistSection = () => {
               setShowStandardHighLabels(true);
               setShowStandardHighDivs(false);
             }}
-            style={{ margin: "5px" }}
+            style={{ marginLeft: "5px", marginBottom: "10px" }}
           >
             Show element labels
           </button>
@@ -428,7 +563,7 @@ export const CraigslistSection = () => {
               setShowStandardHighLabels(false);
               setShowStandardHighDivs(true);
             }}
-            style={{ margin: "5px" }}
+            style={{ marginLeft: "5px", marginBottom: "10px" }}
           >
             Show div labels
           </button>
@@ -462,7 +597,7 @@ export const CraigslistSection = () => {
               setShowMediumHighLabels(false);
               setShowMediumHighDivs(false);
             }}
-            style={{ margin: "5px" }}
+            style={{ marginLeft: "5px", marginBottom: "10px" }}
           >
             Show content only
           </button>
@@ -471,7 +606,7 @@ export const CraigslistSection = () => {
               setShowMediumHighLabels(true);
               setShowMediumHighDivs(false);
             }}
-            style={{ margin: "5px" }}
+            style={{ marginLeft: "5px", marginBottom: "10px" }}
           >
             Show element labels
           </button>
@@ -480,7 +615,7 @@ export const CraigslistSection = () => {
               setShowMediumHighLabels(false);
               setShowMediumHighDivs(true);
             }}
-            style={{ margin: "5px" }}
+            style={{ marginLeft: "5px", marginBottom: "10px" }}
           >
             Show div labels
           </button>
@@ -514,7 +649,7 @@ export const CraigslistSection = () => {
               setShowSmallHighLabels(false);
               setShowSmallHighDivs(false);
             }}
-            style={{ margin: "5px" }}
+            style={{ marginLeft: "5px", marginBottom: "10px" }}
           >
             Show content only
           </button>
@@ -523,7 +658,7 @@ export const CraigslistSection = () => {
               setShowSmallHighLabels(true);
               setShowSmallHighDivs(false);
             }}
-            style={{ margin: "5px" }}
+            style={{ marginLeft: "5px", marginBottom: "10px" }}
           >
             Show element labels
           </button>
@@ -532,7 +667,7 @@ export const CraigslistSection = () => {
               setShowSmallHighLabels(false);
               setShowSmallHighDivs(true);
             }}
-            style={{ margin: "5px" }}
+            style={{ marginLeft: "5px", marginBottom: "10px" }}
           >
             Show div labels
           </button>

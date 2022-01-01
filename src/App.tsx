@@ -53,13 +53,21 @@ function App() {
             <h1 onClick={() => setSection("")} style={{ cursor: "pointer" }}>
               Jane Doe
             </h1>
-            <p>Student at Brown University | Designer and Developer</p>
+            {window.matchMedia("(min-width: 500px)").matches && (
+              <p>Student at Brown University | Designer and Developer</p>
+            )}
           </div>
           <nav className="homepageNavigation">
             <div className="navBarElement" onClick={() => setSection("")}>
               <p>Projects</p>
             </div>
-            <div className="navBarElement" onClick={() => setSection("About")}>
+            <div
+              className="navBarElement"
+              onClick={() => {
+                setSection("About");
+                window.scrollTo(0, 0);
+              }}
+            >
               <p>About Me</p>
             </div>
           </nav>
@@ -111,21 +119,28 @@ function App() {
                 <h3>Hi! I&apos;m Jane</h3>
                 <p>
                   I&apos;m a student at Brown University studying computer
-                  science. I specialize in designing and building{" "}
-                  <b>streamlined frontend experiences</b>, with a focus on{" "}
-                  <b>young adult audiences</b>. I&apos;ve designed experiences
-                  for everything from learning algebra-based physics to posting
-                  classified advertisements.
+                  science.
+                </p>
+
+                <br />
+                <p>
+                  {" "}
+                  My designs are all informed by my experience with{" "}
+                  <b>video game development</b>; I specialize in designing and
+                  building <b>streamlined frontend experiences</b> with a focus
+                  on <b>young adult audiences</b>.
                 </p>
                 <br />
                 <p>
-                  I&apos;m experienced with the <b>MERN stack</b> (MongoDB,
-                  Express, React, Node), as well as design platforms{" "}
-                  <b>Figma</b> and <b>Balsamiq</b>.
+                  I&apos;m experienced with the <b>MERN stack</b>, as well as
+                  design platforms <b>Figma</b> and <b>Balsamiq</b>. I also have
+                  experience with <b>real time graphics</b> and creating
+                  augmented reality effects in <b>SparkAR</b>.
                 </p>
                 <br />
                 <p>
-                  You can reach me at <a href="">myemail@gmail.com</a>
+                  You can check out some of my designs below. For inquiries,
+                  please reach out to me at <a href="">janedoe@gmail.com</a>
                 </p>
               </div>
               <div style={{ width: "30%" }}>
@@ -144,7 +159,7 @@ function App() {
       {section == "Craigslist" && <CraigslistSection />}
       {section == "Freestyle" && <SodaSection />}
       <div className="sectionContainer">
-        <div className="section">
+        <div className="sectionGrid">
           <div className="gridOfProjects">
             {sectionList
               .filter((item, index) => {
