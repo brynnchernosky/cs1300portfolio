@@ -8,7 +8,7 @@
 
 * {
   margin: 0;
-  font-family: "Open Sans", "Times New Roman";
+  font-family: "Open Sans", "Arial";
   line-height: 1;
 }
 
@@ -63,4 +63,37 @@ h1 {
 
 .homepageNavigation {
   margin-top: 1em;
+}
+
+p,
+ul,
+ol {
+  font-size: 18px;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .section {
+    color: black;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    font-family: "Fira Sans", "Times New Roman";
+    padding: 2vw;
+
+    h2 {
+      display: inline;
+      font-size: 30px;
+    }
+  }
+}
+
+.lineBreakBetweenSections {
+  color: gray;
+  opacity: 50%;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
 }
