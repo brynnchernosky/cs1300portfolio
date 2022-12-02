@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  font-family: "Open Sans", "Times New Roman";
+  line-height: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* a {
+  color: blue;
+  text-decoration: underline;
+} */
+
+h1 {
+  font-size: 55px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.webpage {
+  margin-top: 2vh;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+.homepage {
+}
+
+.homepageHeader {
+  position: "fixed";
+  top: 0;
+  left: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.navBarElement {
+  padding: 0.5em;
+  margin: 1em;
+  font-size: 20px;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.homepageNavigation {
+  margin-top: 1em;
 }
