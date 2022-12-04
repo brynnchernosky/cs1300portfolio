@@ -1,9 +1,41 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.scss";
+import { isTemplateExpression } from "typescript";
 
 function App() {
   const [section, setSection] = useState<string>("");
+  const sectionList: {
+    projectTitle: string;
+    projectDescription: string;
+    projectImage: string;
+  }[] = [
+    {
+      projectTitle: "TwentyFirstList",
+      projectDescription:
+        "Redesigning the Craislist webpage for the modern era",
+      projectImage: "",
+    },
+    {
+      projectTitle: "Avocademy",
+      projectDescription: "Online learning modules to teach UI/UX design",
+      projectImage: "",
+    },
+    {
+      projectTitle: "Sweet Designs",
+      projectDescription:
+        "Bakery webpage highlighting patisserie&apos;s sweet offerings",
+      projectImage: "",
+    },
+    {
+      projectTitle: "PhySims",
+      projectDescription:
+        "Teaching algebra-based mechanics to high school and college students",
+      projectImage: "",
+    },
+    { projectTitle: "", projectDescription: "", projectImage: "" },
+    { projectTitle: "", projectDescription: "", projectImage: "" },
+  ];
 
   return (
     <div className="webpage">
@@ -29,12 +61,36 @@ function App() {
         <div className="sectionContainer">
           <div className="section">
             <div className="gridOfProjects">
-              <p className="gridItem">Hello</p>
-              <p className="gridItem">I</p>
-              <p className="gridItem">Am</p>
-              <p className="gridItem">Project</p>
-              <p className="gridItem">Nice</p>
-              <p className="gridItem">Met</p>
+              {sectionList.map((item, index) => {
+                return (
+                  <div
+                    className="gridItem"
+                    key={index}
+                    onClick={() => setSection(item.projectTitle)}
+                  >
+                    <img
+                      style={{ width: "100%", height: "100%" }}
+                      src={item.projectImage}
+                    />
+                    <div
+                      style={{
+                        color: "white",
+                        backgroundColor: `rgba(0,0,0,0.6)`,
+                        position: "relative",
+                        top: "-190px",
+                        padding: "10px",
+                        width: "80%",
+                        margin: "auto",
+                      }}
+                    >
+                      <div style={{ textAlign: "center" }}>
+                        <h2>{item.projectTitle}</h2>
+                      </div>
+                      <p>{item.projectDescription}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
