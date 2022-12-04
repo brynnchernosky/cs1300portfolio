@@ -11,7 +11,7 @@ function App() {
     projectImage: string;
   }[] = [
     {
-      projectTitle: "TwentyFirstList",
+      projectTitle: "Todaylist",
       projectDescription:
         "Redesigning the Craislist webpage for the modern era",
       projectImage: "",
@@ -24,14 +24,14 @@ function App() {
     {
       projectTitle: "Sweet Designs",
       projectDescription:
-        "Bakery webpage highlighting patisserie&apos;s sweet offerings",
-      projectImage: "",
+        "Bakery webpage highlighting the patisserie's sweet offerings",
+      projectImage: "VanillaMacaron.png",
     },
     {
       projectTitle: "PhySims",
       projectDescription:
         "Teaching algebra-based mechanics to high school and college students",
-      projectImage: "",
+      projectImage: "Cover4.png",
     },
     { projectTitle: "", projectDescription: "", projectImage: "" },
     { projectTitle: "", projectDescription: "", projectImage: "" },
@@ -45,6 +45,7 @@ function App() {
             <h1>Jane Doe</h1>
             <p>
               Frontend developer creating streamlined solutions for any business
+              need
             </p>
           </div>
           <nav className="homepageNavigation">
@@ -67,6 +68,7 @@ function App() {
                     className="gridItem"
                     key={index}
                     onClick={() => setSection(item.projectTitle)}
+                    style={{ cursor: "pointer" }}
                   >
                     <img
                       style={{ width: "100%", height: "100%" }}
