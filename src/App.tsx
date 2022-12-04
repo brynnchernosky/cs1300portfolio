@@ -224,7 +224,22 @@ function App() {
               visualize force, acceleration, and velocity vectors alongside
               their mathematical representations.
             </p>
-            insert gif of pendulum with force/acc/vel visible
+            <div>
+              <div
+                style={{
+                  height: 666 * 0.75 + "px",
+                  width: 1205 * 0.75 + "px",
+                  margin: "auto",
+                }}
+              >
+                <iframe
+                  src="https://drive.google.com/file/d/1CBpg1Ilyp17G__no4GHvxQFi_mD9gdTo/preview"
+                  width="100%"
+                  height="100%"
+                  allow="autoplay"
+                ></iframe>
+              </div>
+            </div>
             <br />
             <h4>Tutorial Mode</h4>
             <p>
@@ -232,16 +247,32 @@ function App() {
               solve different categories of problems, with visual depictions and
               mathematical notation accompanying each step.{" "}
             </p>
-            insert gif going through steps of solving incline plane problem
             <br />
             <h4>Review Mode</h4>
             <p>
               In Review Mode, students can practice their problem-solving skills
-              by solving randomly generated problems. Students can sketch out
-              free body diagrams; solve for forces, angles, and coefficients;
-              and run their own custom-designed simulations.{" "}
+              by solving semi-randomly generated problems. Students can sketch
+              out free body diagrams; solve for forces, angles, and
+              coefficients; and run their own custom-designed simulations. If a
+              question stumps them, they can click on the walkthrough link to go
+              to the tutorial mode walkthhrough for that problem.{" "}
             </p>
-            insert gif, sketching forces, put in values, run simulation
+            <div>
+              <div
+                style={{
+                  height: 666 * 0.75 + "px",
+                  width: 1205 * 0.75 + "px",
+                  margin: "auto",
+                }}
+              >
+                <iframe
+                  src="https://drive.google.com/file/d/1F5v1CtK4PW1zlC6shvMJfSmDYrEcybzw/preview"
+                  width="100%"
+                  height="100%"
+                  allow="autoplay"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       )}
