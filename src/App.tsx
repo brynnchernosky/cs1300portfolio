@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.scss";
 import { isTemplateExpression } from "typescript";
+import Carousel from "react-material-ui-carousel";
+import { Paper } from "@mui/material";
 
 function App() {
   const [section, setSection] = useState<string>("");
@@ -11,17 +13,16 @@ function App() {
     projectImage: string;
   }[] = [
     {
-      projectTitle: "Todaylist",
-      projectDescription:
-        "Redesigning the Craislist webpage for the modern era",
-      projectImage:
-        "https://th.bing.com/th/id/R.fb8415118774a6ace2dda4eb4ad48779?rik=IAXXIjVJoy2XMA&pid=ImgRaw&r=0",
-    },
-    {
       projectTitle: "Avocademy",
       projectDescription: "Online learning modules to teach UI/UX design",
       projectImage:
         "https://th.bing.com/th/id/R.fb8415118774a6ace2dda4eb4ad48779?rik=IAXXIjVJoy2XMA&pid=ImgRaw&r=0",
+    },
+    {
+      projectTitle: "PhySims",
+      projectDescription:
+        "Teaching algebra-based mechanics to high school and college students",
+      projectImage: "Cover4.png",
     },
     {
       projectTitle: "Sweet Designs",
@@ -31,23 +32,26 @@ function App() {
         "https://th.bing.com/th/id/R.fb8415118774a6ace2dda4eb4ad48779?rik=IAXXIjVJoy2XMA&pid=ImgRaw&r=0",
     },
     {
-      projectTitle: "PhySims",
+      projectTitle: "Todaylist",
       projectDescription:
-        "Teaching algebra-based mechanics to high school and college students",
+        "Redesigning the Craislist webpage for the modern era",
       projectImage:
         "https://th.bing.com/th/id/R.fb8415118774a6ace2dda4eb4ad48779?rik=IAXXIjVJoy2XMA&pid=ImgRaw&r=0",
     },
+  ];
+
+  const physicsCarousel = [
     {
-      projectTitle: "",
-      projectDescription: "",
-      projectImage:
-        "https://th.bing.com/th/id/R.fb8415118774a6ace2dda4eb4ad48779?rik=IAXXIjVJoy2XMA&pid=ImgRaw&r=0",
+      name: "Freeform Mode",
+      image: "FreeformScreenshot.png",
     },
     {
-      projectTitle: "",
-      projectDescription: "",
-      projectImage:
-        "https://th.bing.com/th/id/R.fb8415118774a6ace2dda4eb4ad48779?rik=IAXXIjVJoy2XMA&pid=ImgRaw&r=0",
+      name: "Tutorial Mode",
+      image: "TutorialScreenshot.png",
+    },
+    {
+      name: "Review Mode",
+      image: "ReviewScreenshot.png",
     },
   ];
 
@@ -120,8 +124,35 @@ function App() {
       {section == "PhySims" && (
         <div className="sectionContainer">
           <div className="section">
-            <div className="sectionHeader">
-              <h2>PhySims</h2>
+            <div className="sectionHeader" style={{ height: "6em" }}>
+              <div
+                style={{
+                  width: "100%",
+                  height: "6em",
+                  backgroundColor: "rgba(0,51,102,1)",
+                }}
+              >
+                <img
+                  src="PhysicsBanner.jpeg"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "top",
+                    opacity: 0.3,
+                  }}
+                />
+              </div>
+              <h2
+                style={{
+                  color: "white",
+                  position: "relative",
+                  top: "-2.5em",
+                  marginLeft: "1em",
+                }}
+              >
+                PhySims
+              </h2>
             </div>
             <br />
             <h3>Overview</h3>
@@ -143,6 +174,19 @@ function App() {
               mode to learn various introductory mechanics topics in
               algebra-based physics courses.
             </p>
+            <br />
+            <br />
+            <div style={{ width: "80%", height: "60vw", margin: "auto" }}>
+              <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
+                {physicsCarousel.map((item, i) => (
+                  <Paper key={i}>
+                    <p>{item.name}</p>
+                    <img src={item.image} style={{ width: "100%" }} />
+                  </Paper>
+                ))}
+              </Carousel>
+            </div>
+            <br />
             <br />
             <h3>Research</h3>
             <p>
@@ -215,64 +259,130 @@ function App() {
               </li>{" "}
             </ul>
             <br />
-            <h3>Designing</h3>
-            <h4>Freeform Mode</h4>
-            <p>
-              In Freeform Mode, students can explore pendulum problems, incline
-              plane problems, and more, toggling parameters and running
-              simulations with mathematically correct forces. They can also
-              visualize force, acceleration, and velocity vectors alongside
-              their mathematical representations.
-            </p>
-            <div>
-              <div
-                style={{
-                  height: 666 * 0.75 + "px",
-                  width: 1205 * 0.75 + "px",
-                  margin: "auto",
-                }}
-              >
-                <iframe
-                  src="https://drive.google.com/file/d/1CBpg1Ilyp17G__no4GHvxQFi_mD9gdTo/preview"
-                  width="100%"
-                  height="100%"
-                  allow="autoplay"
-                ></iframe>
+            <h3>Final Design</h3>
+            <div style={{ display: "flex" }}>
+              <div style={{ width: "50%" }}>
+                <h4>Freeform Mode</h4>
+                <p>
+                  In Freeform Mode, students can explore pendulum problems,
+                  incline plane problems, and more, toggling parameters and
+                  running simulations that are animated mathematically
+                  correctly. Students can also visualize the force,
+                  acceleration, and velocity vectors.
+                </p>
+              </div>
+              <div style={{ width: "50%" }}>
+                <div
+                  style={{
+                    height: 666 * 0.3 + "px",
+                    width: 1205 * 0.3 + "px",
+                    margin: "auto",
+                  }}
+                >
+                  <img
+                    src="Freeform.gif"
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                    }}
+                  />
+                </div>
               </div>
             </div>
             <br />
-            <h4>Tutorial Mode</h4>
-            <p>
-              In Tutorial Mode, students receive step-by-step guidance on how to
-              solve different categories of problems, with visual depictions and
-              mathematical notation accompanying each step.{" "}
-            </p>
             <br />
-            <h4>Review Mode</h4>
-            <p>
-              In Review Mode, students can practice their problem-solving skills
-              by solving semi-randomly generated problems. Students can sketch
-              out free body diagrams; solve for forces, angles, and
-              coefficients; and run their own custom-designed simulations. If a
-              question stumps them, they can click on the walkthrough link to go
-              to the tutorial mode walkthhrough for that problem.{" "}
-            </p>
-            <div>
-              <div
-                style={{
-                  height: 666 * 0.75 + "px",
-                  width: 1205 * 0.75 + "px",
-                  margin: "auto",
-                }}
-              >
-                <iframe
-                  src="https://drive.google.com/file/d/1F5v1CtK4PW1zlC6shvMJfSmDYrEcybzw/preview"
-                  width="100%"
-                  height="100%"
-                  allow="autoplay"
-                ></iframe>
+            <br />
+            <div style={{ display: "flex" }}>
+              <div style={{ width: "50%" }}>
+                <h4>Tutorial Mode</h4>
+                <p>
+                  In Tutorial Mode, students receive step-by-step guidance on
+                  how to solve different categories of problems, with visual
+                  depictions and written explanations accompanying each step.
+                  There are also links to helpful external resources related to
+                  the problem.
+                </p>
+              </div>
+              <div style={{ width: "50%" }}>
+                <div
+                  style={{
+                    height: 666 * 0.3 + "px",
+                    width: 1205 * 0.3 + "px",
+                    margin: "auto",
+                  }}
+                >
+                  <img
+                    src="Tutorial.gif"
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                    }}
+                  />
+                </div>
               </div>
             </div>
+            <br />
+            <br />
+            <br />
+            <div style={{ display: "flex" }}>
+              <div style={{ width: "50%" }}>
+                <h4>Review Mode</h4>
+                <p>
+                  In Review Mode, students can practice their problem-solving
+                  skills by solving semi-randomly generated problems. Students
+                  can sketch out free body diagrams; solve for forces, angles,
+                  and coefficients; and run their own custom-designed
+                  simulations. If a question stumps them, they can click on the
+                  walkthrough link to go to the tutorial mode walkthrough for
+                  that problem.
+                </p>
+              </div>
+              <div style={{ width: "50%" }}>
+                <div
+                  style={{
+                    height: 666 * 0.3 + "px",
+                    width: 1205 * 0.3 + "px",
+                    margin: "auto",
+                  }}
+                >
+                  <img
+                    src="Review.gif"
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+            <br />
+            <h3>Takeaways</h3>
+            <br />
+            <ul>
+              <li>
+                <b>Iterative Design:</b> Working on this project reinforced how
+                important it is to get feedback at all points in the design
+                process, from before you have anything coded to after you have a
+                working prototype and everywhere in between. My final design
+                ended up much stronger than my initial mockups thanks to lots of
+                great feedback from others.
+              </li>
+              <li>
+                <b>Extensible Design:</b>I also learned about how important it
+                is to create an extensible design. Because I wrote the
+                simulation animation code to be entirely physically-based, it
+                was super easy to add other types of simulations, and I plan to
+                continue adding more simulation types in the future.
+              </li>
+              <li>
+                <b>Well Written Code:</b> Finally, this project reinforced the
+                importance of having clean, easily readable code. I experienced
+                the classic problem with large codebases: as time went on, more
+                and more of my time was spent on debugging rather than adding
+                new features. Having organized, commented code made it much
+                easier to isolate and resolve bugs.
+              </li>
+            </ul>
           </div>
         </div>
       )}
