@@ -49,12 +49,12 @@ function App() {
             </p>
           </div>
           <nav className="homepageNavigation">
-            <a href="" className="navBarElement">
-              Work
-            </a>
-            <a href="" className="navBarElement">
-              About
-            </a>
+            <div className="navBarElement" onClick={() => setSection("")}>
+              <p>Work</p>
+            </div>
+            <div className="navBarElement" onClick={() => setSection("About")}>
+              <p>About</p>
+            </div>
           </nav>
         </header>
       </div>
@@ -70,10 +70,16 @@ function App() {
                     onClick={() => setSection(item.projectTitle)}
                     style={{ cursor: "pointer" }}
                   >
-                    <img
-                      style={{ width: "100%", height: "100%" }}
-                      src={item.projectImage}
-                    />
+                    <div style={{ width: "400px", height: "300px" }}>
+                      <img
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                        src={item.projectImage}
+                      />
+                    </div>
                     <div
                       style={{
                         color: "white",
