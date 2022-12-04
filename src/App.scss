@@ -87,6 +87,39 @@ ol {
       display: inline;
       font-size: 30px;
     }
+
+    @media (max-width: 900px) {
+      .gridOfProjects {
+        display: grid;
+        column-gap: 50px;
+        row-gap: 50px;
+        grid-template-columns: auto;
+      }
+    }
+    @media (min-width: 901px) and (max-width: 1300px) {
+      .gridOfProjects {
+        display: grid;
+        column-gap: 50px;
+        row-gap: 50px;
+        grid-template-columns: auto auto;
+      }
+    }
+    @media (min-width: 1301px) {
+      .gridOfProjects {
+        display: grid;
+        column-gap: 50px;
+        row-gap: 50px;
+        grid-template-columns: auto auto auto;
+      }
+    }
+
+    .gridItem {
+      width: 400px;
+      height: 300px;
+      border-style: solid;
+      border-color: black;
+      border-width: 2px;
+    }
   }
 }
 
