@@ -21,6 +21,7 @@ export const PhysicsSection = () => {
 
   return (
     <Section
+      color={[139, 0, 0]}
       title={"PhySims"}
       titleBackgroundImage={"PhysicsBanner.jpeg"}
       firstSectionContent={

@@ -6,6 +6,7 @@ import { Section } from "./Section";
 export const AvocademySection = () => {
   return (
     <Section
+      color={[81, 119, 89]}
       title={"Avocademy"}
       titleBackgroundImage={""}
       firstSectionContent={<div></div>}

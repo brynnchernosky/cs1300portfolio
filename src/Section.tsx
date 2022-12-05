@@ -3,6 +3,7 @@ import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 
 export interface ISectionProps {
+  color: number[];
   title: string;
   titleBackgroundImage: string;
   firstSectionContent: JSX.Element;
@@ -22,6 +23,7 @@ export interface ISectionProps {
 
 export const Section = (props: ISectionProps) => {
   const {
+    color,
     title,
     titleBackgroundImage,
     firstSectionContent,
@@ -37,12 +39,13 @@ export const Section = (props: ISectionProps) => {
   return (
     <div className="sectionContainer">
       <div className="section">
-        <div className="sectionHeader" style={{ height: "6em" }}>
+        <div className="sectionHeader" style={{ height: "9em" }}>
           <div
             style={{
               width: "100%",
-              height: "6em",
-              backgroundColor: "rgba(0,51,102,1)",
+              height: "9em",
+              backgroundColor:
+                "rgb(" + color[0] + "," + color[1] + "," + color[2] + ")",
             }}
           >
             <img
@@ -56,16 +59,20 @@ export const Section = (props: ISectionProps) => {
               }}
             />
           </div>
-          <h2
+          <div
             style={{
-              color: "white",
+              width: "100%",
+              height: "9em",
+              paddingLeft: "1em",
+              display: "flex",
+              alignItems: "center",
               position: "relative",
-              top: "-2.5em",
-              marginLeft: "1em",
+              color: "white",
+              top: "-9em",
             }}
           >
-            {title}
-          </h2>
+            <h2>{title}</h2>
+          </div>
         </div>
         <br />
         <h3>Overview</h3>
@@ -76,6 +83,8 @@ export const Section = (props: ISectionProps) => {
             style={{
               width: "80vw",
               height: "40vw",
+              maxHeight: "40vw",
+              minHeight: "40vw",
               margin: "auto",
             }}
           >

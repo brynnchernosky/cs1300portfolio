@@ -6,8 +6,9 @@ import { Section } from "./Section";
 export const BakerySection = () => {
   return (
     <Section
+      color={[152, 68, 158]}
       title={"Sweet Designs"}
-      titleBackgroundImage={""}
+      titleBackgroundImage={"BakeryBanner.jpeg"}
       firstSectionContent={<div></div>}
       firstSectionCarousel={null}
       secondSectionTitle={""}
