@@ -17,28 +17,25 @@ function App() {
     {
       projectTitle: "Avocademy",
       projectDescription: "Online learning modules to teach UI/UX design",
-      projectImage:
-        "https://th.bing.com/th/id/R.fb8415118774a6ace2dda4eb4ad48779?rik=IAXXIjVJoy2XMA&pid=ImgRaw&r=0",
+      projectImage: "AvocademyCover.png",
     },
     {
       projectTitle: "PhySims",
       projectDescription:
         "Teaching algebra-based mechanics to high school and college students",
-      projectImage: "Cover4.png",
+      projectImage: "PhysicsCover.png",
     },
     {
       projectTitle: "Sweet Designs",
       projectDescription:
         "Bakery webpage highlighting the patisserie's sweet offerings",
-      projectImage:
-        "https://th.bing.com/th/id/R.fb8415118774a6ace2dda4eb4ad48779?rik=IAXXIjVJoy2XMA&pid=ImgRaw&r=0",
+      projectImage: "RaspberryMacaron.png",
     },
     {
       projectTitle: "Todaylist",
       projectDescription:
-        "Redesigning the Craislist webpage for the modern era",
-      projectImage:
-        "https://th.bing.com/th/id/R.fb8415118774a6ace2dda4eb4ad48779?rik=IAXXIjVJoy2XMA&pid=ImgRaw&r=0",
+        "Redesigning the Craigslist webpage for the modern era",
+      projectImage: "CraigslistCover.png",
     },
   ];
 
@@ -73,7 +70,7 @@ function App() {
                     className="gridItem"
                     key={index}
                     onClick={() => setSection(item.projectTitle)}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: "pointer", borderStyle: "none" }}
                   >
                     <div style={{ width: "400px", height: "300px" }}>
                       <img
