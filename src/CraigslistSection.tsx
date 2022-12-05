@@ -4,6 +4,21 @@ import { Paper } from "@mui/material";
 import { Section } from "./Section";
 
 export const CraigslistSection = () => {
+  const [showStandardLabels, setShowStandardLabels] = useState<boolean>(false);
+  const [showSmallLabels, setShowSmallLabels] = useState<boolean>(false);
+  const [showMediumLabels, setShowMediumLabels] = useState<boolean>(false);
+
+  const [showStandardHighLabels, setShowStandardHighLabels] =
+    useState<boolean>(false);
+  const [showStandardHighDivs, setShowStandardHighDivs] =
+    useState<boolean>(false);
+  const [showSmallHighLabels, setShowSmallHighLabels] =
+    useState<boolean>(false);
+  const [showSmallHighDivs, setShowSmallHighDivs] = useState<boolean>(false);
+  const [showMediumHighLabels, setShowMediumHighLabels] =
+    useState<boolean>(false);
+  const [showMediumHighDivs, setShowMediumHighDivs] = useState<boolean>(false);
+
   return (
     <Section
       color={[0, 51, 102]}
@@ -31,7 +46,7 @@ export const CraigslistSection = () => {
             />
           </div>
           <br></br>
-          <h3>Usability Issues</h3>
+          <h4>Usability Issues</h4>
           <ul>
             <li>
               <strong>Clutter</strong>
@@ -113,7 +128,7 @@ export const CraigslistSection = () => {
             </ul>
           </ul>
           <br></br>
-          <h3>Accessibility Issues</h3>
+          <h4>Accessibility Issues</h4>
           <ul>
             <li>
               <strong>Elements</strong>
@@ -161,7 +176,7 @@ export const CraigslistSection = () => {
             </ul>
           </ul>
           <br></br>
-          <h3>Redesign</h3>
+          <h4>Redesign</h4>
           <p>
             {" "}
             I redesigned the Craigslist homepage for Providence, RI to address
@@ -173,12 +188,429 @@ export const CraigslistSection = () => {
         </div>
       }
       firstSectionCarousel={null}
-      secondSectionTitle={""}
-      secondSectionContent={<div></div>}
-      thirdSectionTitle={""}
-      thirdSectionContent={<div></div>}
-      finalDesignContent={<div></div>}
-      takeawaysContent={<div></div>}
+      secondSectionTitle={"Low-Fidelity Prototypes"}
+      secondSectionContent={
+        <div>
+          <div>
+            <p>
+              I developed the following low-fi prototypes for laptop/desktop,
+              tablet, and mobile layouts. You can click the &quot;Toggle
+              labels&quot; button above each sketch to toggle on and off the
+              user interface component labels.
+            </p>
+            <br></br>
+            <h4>Base Design (Laptops and Desktops)</h4>
+            <button
+              onClick={() => {
+                setShowStandardLabels(!showStandardLabels);
+              }}
+            >
+              Toggle labels
+            </button>
+            <div id="standardLowFidelityPrototypeImageContainer">
+              {showStandardLabels && (
+                <img
+                  src="LabeledStandardLowFidelityPrototype.png"
+                  alt="labeled standard low fidelity prototype"
+                  className="prototype"
+                />
+              )}
+              {!showStandardLabels && (
+                <img
+                  src="StandardLowFidelityPrototype.png"
+                  alt="standard low fidelity prototype"
+                  className="prototype"
+                />
+              )}
+            </div>
+            <br></br>
+            <p>
+              This base interface is intended for laptop and desktop computers.
+              The main components of the redesigned interface are as follows:
+            </p>
+            <ol>
+              <li>
+                <strong>Hamburger Menu</strong>: When clicked, this opens up a
+                sidebar menu containing the general information in the leftmost
+                column of the original interface. This helps reduce content on
+                the homepage.
+              </li>
+              <li>
+                <strong>Search Bar</strong>: Similar to the original search bar,
+                but with reduced text and the addition of an icon. This helps
+                reduce content on the homepage, and the new location draws
+                attention to the search bar more easily.
+              </li>
+              <li>
+                <strong>Title and Subtitle</strong>: Both elements are centered
+                to help direct the user&apos;s attention. Clicking on the
+                subtitle will now lead to a landing page with the location
+                options in the rightmost column of the original interface, which
+                helps reduce content on the homepage.
+              </li>
+              <li>
+                <strong>Login Button</strong>: Text changed from &quot;My
+                Account&quot; to &quot;Login&quot; to better represent its
+                function. New location emphasizes importance. Much larger, which
+                aids in accessibility and reduces the chance of mis-clicks.
+              </li>
+              <li>
+                <strong>Language Menu</strong>: Much larger, which aids in
+                accessibility and reduces the chance of mis-clicks.
+              </li>
+              <li>
+                <strong>Menu Bar</strong>: The buttons represent the major
+                sections. Clicking on the button will take the user to a landing
+                page for that section where additional filtering can be done.
+                This helps drastically reduce content on the homepage.
+              </li>
+              <li>
+                <strong>Recent Posts</strong>: This is a new addition to the
+                webpage to increase the ability for users to explore and
+                discover new content. Recent/popular posts from various
+                categories will appear and scroll infinitely. If the post
+                includes a picture, it will be shown to increase user
+                interest/engagement and break up the text.
+              </li>
+              <li>
+                <strong>Upcoming Events</strong>: This is a new addition to the
+                webpage to increase the ability for users to explore and
+                discover new events. Upcoming popular events in the area will
+                appear and scroll.
+              </li>
+              <li>
+                <strong>Popular Forums</strong>: Clicking on a forum category
+                will expand the section to list forums within that category.
+                This helps reduce content on the homepage.
+              </li>
+            </ol>
+            <br></br>
+            <h4>Tablet Design</h4>
+            <button
+              onClick={() => {
+                setShowMediumLabels(!showMediumLabels);
+              }}
+            >
+              Toggle labels
+            </button>
+            <div id="mediumLowFidelityPrototypeImageContainer">
+              {showMediumLabels && (
+                <img
+                  src="LabeledMediumLowFidelityPrototype.png"
+                  alt="labeled tablet low fidelity prototype"
+                  className="prototype"
+                />
+              )}
+              {!showMediumLabels && (
+                <img
+                  src="MediumLowFidelityPrototype.png"
+                  alt="tablet low fidelity prototype"
+                  className="prototype"
+                />
+              )}
+            </div>
+            <br></br>
+            <p>
+              This design is intended for tablets. The changes from the base
+              design are to account for the smaller amount of screen space and
+              are as follows:
+            </p>
+            <ul>
+              <li>
+                <strong>Content</strong>: The events block and forums block
+                disappear in favor of emphasizing classified advertisement
+                posts, the website&apos;s focus.
+              </li>
+            </ul>
+            <br></br>
+            <h4>Mobile Design</h4>
+            <button
+              onClick={() => {
+                setShowSmallLabels(!showSmallLabels);
+              }}
+            >
+              Toggle labels
+            </button>
+            <div id="smallLowFidelityPrototypeImageContainer">
+              {showSmallLabels && (
+                <img
+                  src="LabeledSmallLowFidelityPrototype.png"
+                  className="prototype"
+                  alt="labeled mobile low fidelity prototype"
+                />
+              )}
+              {!showSmallLabels && (
+                <img
+                  src="SmallLowFidelityPrototype.png"
+                  className="prototype"
+                  alt="mobile low fidelity prototype"
+                />
+              )}
+            </div>
+            <br></br>
+            <p>
+              This design is intended for mobile phones. The changes from the
+              base design are all to account for the smaller amount of screen
+              space available, and only the most important content is
+              prioritized. The changes are as follows:
+            </p>
+            <ul>
+              <li>
+                <strong>Content</strong>: As in the tablet design, the events
+                block and forums block disappear in favor of emphasizing
+                classified advertisement posts, the website&apos;s focus.
+              </li>
+              <li>
+                <strong>Header</strong> The search bar disappears and the search
+                icon becomes a button to open the search bar. The login button
+                and language button are stacked instead of next to each other.
+              </li>
+              <li>
+                <strong>Menu Bar</strong> The menu bar disappears and is now
+                accessible through the hamburger menu.
+              </li>
+            </ul>
+          </div>
+          <br />
+          <div>
+            <p>
+              For stylistic consistency, I developed the following design guide
+              for the redesigned webpage. The icons in the design guide are
+              Unicon open source icons by{" "}
+              <a href="https://iconscout.com">IconScout</a>.
+            </p>
+            <div id="designGuideContainer">
+              <img
+                src="DesignGuide.png"
+                id="designGuide"
+                alt="design guide with standard element interactions, fonts, colors, etc."
+              />
+            </div>
+          </div>
+        </div>
+      }
+      thirdSectionTitle={"High-Fidelity Prototype"}
+      thirdSectionContent={
+        <div>
+          <p>
+            Using my low-fi prototypes and design guide as reference, I
+            developed the following high-fi prototypes for laptop/desktop,
+            tablet, and mobile layouts. You can click the &quot;Show element
+            labels&quot; button above each prototype to display element labels,
+            and the &quot;Show div labels&quot; button to show the major divs.
+            To remove labels, you can click the &quot;Show content only&quot;
+            button.{" "}
+          </p>
+          <br></br>
+          <h4>Laptop/Desktop Design</h4>
+          <button
+            onClick={() => {
+              setShowStandardHighLabels(false);
+              setShowStandardHighDivs(false);
+            }}
+          >
+            Show content only
+          </button>
+          <button
+            onClick={() => {
+              setShowStandardHighLabels(true);
+              setShowStandardHighDivs(false);
+            }}
+          >
+            Show element labels
+          </button>
+          <button
+            onClick={() => {
+              setShowStandardHighLabels(false);
+              setShowStandardHighDivs(true);
+            }}
+          >
+            Show div labels
+          </button>
+          <div id="standardHighFidelityPrototypeImageContainer">
+            {showStandardHighDivs && (
+              <img
+                src="DivStandardHighFidelityPrototype.png"
+                className="prototype"
+                alt="standard high fidelity prototype with divs labeled"
+              />
+            )}
+            {showStandardHighLabels && (
+              <img
+                src="LabeledStandardHighFidelityPrototype.png"
+                className="prototype"
+                alt="standard high fidelity prototype with elements labeled"
+              />
+            )}
+            {!showStandardHighLabels && !showStandardHighDivs && (
+              <img
+                src="StandardHighFidelityPrototype.png"
+                className="prototype"
+                alt="standard high fidelity prototype"
+              />
+            )}
+          </div>
+          <br></br>
+          <h4>Tablet Design</h4>
+          <button
+            onClick={() => {
+              setShowMediumHighLabels(false);
+              setShowMediumHighDivs(false);
+            }}
+          >
+            Show content only
+          </button>
+          <button
+            onClick={() => {
+              setShowMediumHighLabels(true);
+              setShowMediumHighDivs(false);
+            }}
+          >
+            Show element labels
+          </button>
+          <button
+            onClick={() => {
+              setShowMediumHighLabels(false);
+              setShowMediumHighDivs(true);
+            }}
+          >
+            Show div labels
+          </button>
+          <div id="mediumHighFidelityPrototypeContainer">
+            {showMediumHighDivs && (
+              <img
+                src="DivMediumHighFidelityPrototype.png"
+                className="prototype"
+                alt="tablet high fidelity prototype with divs labeled"
+              />
+            )}
+            {showMediumHighLabels && (
+              <img
+                src="LabeledMediumHighFidelityPrototype.png"
+                className="prototype"
+                alt="tablet high fidelity prototype with elements labeled"
+              />
+            )}
+            {!showMediumHighLabels && !showMediumHighDivs && (
+              <img
+                src="MediumHighFidelityPrototype.png"
+                className="prototype"
+                alt="tablet high fidelity prototype"
+              />
+            )}
+          </div>
+          <br></br>
+          <h4>Mobile Design</h4>
+          <button
+            onClick={() => {
+              setShowSmallHighLabels(false);
+              setShowSmallHighDivs(false);
+            }}
+          >
+            Show content only
+          </button>
+          <button
+            onClick={() => {
+              setShowSmallHighLabels(true);
+              setShowSmallHighDivs(false);
+            }}
+          >
+            Show element labels
+          </button>
+          <button
+            onClick={() => {
+              setShowSmallHighLabels(false);
+              setShowSmallHighDivs(true);
+            }}
+          >
+            Show div labels
+          </button>
+          <div id="smallHighFidelityPrototypeImageContainer">
+            {showSmallHighDivs && (
+              <img
+                src="DivSmallHighFidelityPrototype.png"
+                className="prototype"
+                alt="mobile high fidelity prototype with divs labeled"
+              />
+            )}
+            {showSmallHighLabels && (
+              <img
+                src="LabeledSmallHighFidelityPrototype.png"
+                className="prototype"
+                alt="mobile high fidelity prototype with elements labeled"
+              />
+            )}
+            {!showSmallHighLabels && !showSmallHighDivs && (
+              <img
+                src="SmallHighFidelityPrototype.png"
+                className="prototype"
+                alt="mobile high fidelity prototype"
+              />
+            )}
+          </div>
+        </div>
+      }
+      finalDesignContent={
+        <div>
+          <p>
+            Based on my high-fidelity prototype, I developed a redesigned
+            webpage using HTML/CSS. The deployed webpage can be found{" "}
+            <a
+              href="https://cheerfuldragonfly182.github.io/redesigned-webpage/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              here
+            </a>
+            . Screenshots of the website layout for various device sizes can be
+            found below.
+          </p>
+          <br></br>
+          <h4>Laptop/Desktop Layout</h4>
+          <div className="screenshotContainer">
+            <div className="screenshotWrapper">
+              <img
+                src="LaptopWebpage.png"
+                alt="laptop/desktop webpage layout"
+              />
+            </div>
+          </div>
+          <br></br>
+          <h4>Tablet Layout</h4>
+          <div className="screenshotContainer">
+            <div className="screenshotWrapper">
+              <img src="TabletWebpage.png" alt="tablet webpage layout" />
+            </div>
+          </div>
+          <br></br>
+          <h4>Mobile Layout</h4>
+          <div className="screenshotContainer">
+            <div className="screenshotWrapper">
+              <img src="MobileWebpage.png" alt="mobile webpage layout" />
+            </div>
+          </div>
+          <br></br>
+          <p>
+            Placeholder elements are used for elements that would be interactive
+            as described in the &quot;Low-Fi Prototypes&quot; section.
+          </p>
+          <br></br>
+          <p>
+            The redesigned webpage has addressed all of the original usability
+            issues noted, notably reducing the amount of content on the screen,
+            improving navigability, improving the ability of users to discover
+            new content, and improving the professionalism of the webpage. The
+            reduction in content ameliorates many of the accessibility issues
+            noted, as does the addition of missing tags/labels and use of all
+            heading levels.
+          </p>
+        </div>
+      }
+      takeawaysContent={
+        <div>
+          <p>TODO</p>
+        </div>
+      }
     />
   );
 };

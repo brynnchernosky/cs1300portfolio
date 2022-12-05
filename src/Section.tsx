@@ -98,11 +98,12 @@ export const Section = (props: ISectionProps) => {
                 </Paper>
               ))}
             </Carousel>
+
+            <br />
+            <br />
+            <br />
           </div>
         )}
-        <br />
-        <br />
-        <br />
         <h3>{secondSectionTitle}</h3>
         {secondSectionContent}
         <br />

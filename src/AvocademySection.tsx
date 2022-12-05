@@ -8,7 +8,7 @@ export const AvocademySection = () => {
     <Section
       color={[81, 119, 89]}
       title={"Avocademy"}
-      titleBackgroundImage={""}
+      titleBackgroundImage={"AvocademyBanner.jpeg"}
       firstSectionContent={<div></div>}
       firstSectionCarousel={null}
       secondSectionTitle={""}
