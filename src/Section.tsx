@@ -79,26 +79,24 @@ export const Section = (props: ISectionProps) => {
         {firstSectionContent}
         <br />
         {firstSectionCarousel && (
-          <div
-            style={{
-              width: "80vw",
-              height: "40vw",
-              maxHeight: "40vw",
-              minHeight: "40vw",
-              margin: "auto",
-            }}
-          >
-            <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
-              {firstSectionCarousel.map((item, i) => (
-                <Paper key={i}>
-                  <p>
+          <div>
+            <div
+              style={{
+                width: "90%",
+                margin: "auto",
+              }}
+            >
+              <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
+                {firstSectionCarousel.map((item, i) => (
+                  <Paper key={i}>
+                    {/* <p>
                     <b>{item.name}</b>
-                  </p>
-                  <img src={item.image} style={{ width: "100%" }} />
-                </Paper>
-              ))}
-            </Carousel>
-
+                  </p> */}
+                    <img src={item.image} style={{ width: "100%" }} />
+                  </Paper>
+                ))}
+              </Carousel>
+            </div>
             <br />
             <br />
             <br />

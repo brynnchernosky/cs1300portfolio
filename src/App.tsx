@@ -44,7 +44,9 @@ function App() {
       <div className="homepage">
         <header className="homepageHeader">
           <div>
-            <h1 onClick={() => setSection("")}>Jane Doe</h1>
+            <h1 onClick={() => setSection("")} style={{ cursor: "pointer" }}>
+              Jane Doe
+            </h1>
             <p>
               Frontend developer creating streamlined solutions for any business
               need
@@ -120,9 +122,24 @@ function App() {
           </div>
         </div>
       )}
+      {section == "About" && (
+        <div className="sectionContainer">
+          <div className="section">
+            <div style={{ width: "70%" }}>
+              <h2>About Me</h2>
+              <p>
+                I&apos;m a student at Brown University studying computer science
+                and economics. I specialize in creating streamlined frontend
+                experiences to meet any business need.
+              </p>
+              <p>TODO</p>
+            </div>
+          </div>
+        </div>
+      )}
       {section == "Avocademy" && <AvocademySection />}
       {section == "PhySims" && <PhysicsSection />}
-      {section == "Sweet Designs" && <BakerySection />}
+      {section == "Sweet Shop" && <BakerySection />}
       {section == "Todaylist" && <CraigslistSection />}
     </div>
   );

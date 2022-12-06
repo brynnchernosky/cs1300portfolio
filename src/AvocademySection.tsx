@@ -325,13 +325,17 @@ export const AvocademySection = () => {
             <a href="https://www.ycombinator.com/companies/avocademy">
               YCombinator listing
             </a>{" "}
-            for the startup.
+            for the startup. The icons in the design guide are Unicon open
+            source icons by <a href="https://iconscout.com">IconScout</a>.
           </p>
-          <img
-            src={"DesignGuide.jpg"}
-            id="designGuide"
-            style={{ width: "50%" }}
-          />
+          <br />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <img
+              src={"DesignGuide.jpg"}
+              id="designGuide"
+              style={{ width: "50%" }}
+            />
+          </div>
           <h4>Initial Prototype</h4>
           <p>
             After that, we combined our low-fidelity prototype with our design
@@ -420,9 +424,10 @@ export const AvocademySection = () => {
           <h4>Final Prototype</h4>
           <p>
             Based on the feedback we received on our initial prototype, we
-            implemented the changes from the "Prototype Comparison" section and
-            developed the final version of our interactive high-fidelity
-            prototype, which is embedded below and can also be accessed{" "}
+            implemented the changes from the &quot;Prototype Comparison&quot;
+            section and developed the final version of our interactive
+            high-fidelity prototype, which is embedded below and can also be
+            accessed{" "}
             <a href="https://www.figma.com/proto/h9kL8DP45ex85JgEiNQ85H/Avocademy-Final-Prototype?page-id=0%3A1&node-id=1%3A7&viewport=24%2C212%2C0.14&scaling=scale-down&starting-point-node-id=1%3A7">
               here
             </a>
@@ -454,13 +459,13 @@ export const AvocademySection = () => {
           <p>The scenario provided to the users was as follows:</p>
           <ul>
             <li>
-              You've signed up for an 8 week bootcamp learning about user
+              You&apos;ve signed up for an 8 week bootcamp learning about user
               interfaces and user experiences, with the hopes of getting a job
-              in UI/UX afterwards. You're currently on Week 2 of the course, and
-              you have been working on the Intro to Bootstrap module. Please
-              note that the "webpage" you'll interact with for these tasks is
-              not an actual webpage but instead an interactive mockup made on
-              prototyping software.
+              in UI/UX afterwards. You&apos;re currently on Week 2 of the
+              course, and you have been working on the Intro to Bootstrap
+              module. Please note that the &quot;webpage&quot; you&apos;ll
+              interact with for these tasks is not an actual webpage but instead
+              an interactive mockup made on prototyping software.
             </li>
           </ul>
           <br />
@@ -499,7 +504,9 @@ export const AvocademySection = () => {
           </p>
           <br />
           <h5>Results</h5>
-          <p>Videos of each user's performance on the tasks are shown below:</p>
+          <p>
+            Videos of each user&apos;s performance on the tasks are shown below:
+          </p>
           <br />
           <Grid container spacing={2}>
             <Grid
@@ -678,7 +685,11 @@ export const AvocademySection = () => {
           </ul>
         </div>
       }
-      takeawaysContent={<div></div>}
+      takeawaysContent={
+        <div>
+          <p>TODO</p>
+        </div>
+      }
     />
   );
 };

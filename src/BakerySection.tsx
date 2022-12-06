@@ -7,9 +7,17 @@ export const BakerySection = () => {
   return (
     <Section
       color={[152, 68, 158]}
-      title={"Sweet Designs"}
+      title={"Sweet Shop"}
       titleBackgroundImage={"BakeryBanner.jpeg"}
-      firstSectionContent={<div></div>}
+      firstSectionContent={
+        <div>
+          <p>
+            A good webpage can make or break a restaurant these days, allowing
+            restaurant owners to increase sales and avoid revenue lost to third
+            party ordering services. I developed{" "}
+          </p>
+        </div>
+      }
       firstSectionCarousel={null}
       secondSectionTitle={""}
       secondSectionContent={<div></div>}
