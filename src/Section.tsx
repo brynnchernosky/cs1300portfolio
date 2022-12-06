@@ -13,7 +13,7 @@ export interface ISectionProps {
   thirdSectionContent: JSX.Element;
   fourthSectionTitle?: string;
   fourthSectionContent?: JSX.Element;
-  finalDesignContent: JSX.Element;
+  finalDesignContent: JSX.Element | null;
   takeawaysContent: JSX.Element;
 }
 
@@ -88,8 +88,12 @@ export const Section = (props: ISectionProps) => {
             <br />
           </div>
         )}
-        <h3>Final Design</h3>
-        {finalDesignContent}
+        {finalDesignContent && (
+          <div>
+            <h3>Final Design</h3>
+            {finalDesignContent}
+          </div>
+        )}
         <br />
         <h3>Takeaways</h3>
         {takeawaysContent}

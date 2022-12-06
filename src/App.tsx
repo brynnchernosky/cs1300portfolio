@@ -41,7 +41,7 @@ function App() {
     {
       projectTitle: "Freestyle",
       projectDescription: "Researching use of soda machines in dining halls",
-      projectImage: "SodaCover.png",
+      projectImage: "DrinkDispenserPhoto.png",
     },
   ];
 
