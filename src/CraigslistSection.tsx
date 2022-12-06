@@ -22,7 +22,7 @@ export const CraigslistSection = () => {
   return (
     <Section
       color={[0, 51, 102]}
-      title={"Newlist"}
+      title={"Craigslist"}
       titleBackgroundImage={"CraigslistBanner.jpeg"}
       firstSectionContent={
         <div>

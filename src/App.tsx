@@ -33,7 +33,7 @@ function App() {
     //   projectImage: "RaspberryMacaron.png",
     // },
     {
-      projectTitle: "Todaylist",
+      projectTitle: "Craigslist",
       projectDescription:
         "Redesigning the Craigslist webpage for the modern era",
       projectImage: "CraigslistCover.png",
@@ -60,7 +60,7 @@ function App() {
               <p>Work</p>
             </div>
             <div className="navBarElement" onClick={() => setSection("About")}>
-              <p>About</p>
+              <p>About Me</p>
             </div>
           </nav>
         </header>
@@ -69,11 +69,15 @@ function App() {
         <div className="sectionContainer">
           <div className="section">
             <div style={{ width: "70%" }}>
-              <h2>About Me</h2>
+              <h2>Hi! I&apos;m Jane</h2>
               <p>
                 I&apos;m a student at Brown University studying computer science
                 and economics. I specialize in designing and building
                 streamlined frontend experiences to meet any business need.
+              </p>
+              <br />
+              <p>
+                You can reach me at <a href="">myemail@gmail.com</a>
               </p>
             </div>
           </div>
@@ -82,7 +86,7 @@ function App() {
       {section == "Avocademy" && <AvocademySection />}
       {section == "PhySims" && <PhysicsSection />}
       {section == "Sweet Shop" && <BakerySection />}
-      {section == "Todaylist" && <CraigslistSection />}
+      {section == "Craigslist" && <CraigslistSection />}
       {section == "Freestyle" && <SodaSection />}
       <div className="sectionContainer">
         <div className="section">
