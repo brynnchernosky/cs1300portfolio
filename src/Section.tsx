@@ -63,7 +63,7 @@ export const Section = (props: ISectionProps) => {
             style={{
               width: "100%",
               height: "9em",
-              paddingLeft: "1em",
+              padding: "1em",
               display: "flex",
               alignItems: "center",
               position: "relative",

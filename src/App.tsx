@@ -26,7 +26,7 @@ function App() {
       projectImage: "PhysicsCover.png",
     },
     {
-      projectTitle: "Sweet Designs",
+      projectTitle: "Sweet Shop",
       projectDescription:
         "Bakery webpage highlighting the patisserie's sweet offerings",
       projectImage: "RaspberryMacaron.png",
@@ -44,7 +44,7 @@ function App() {
       <div className="homepage">
         <header className="homepageHeader">
           <div>
-            <h1>Jane Doe</h1>
+            <h1 onClick={() => setSection("")}>Jane Doe</h1>
             <p>
               Frontend developer creating streamlined solutions for any business
               need
@@ -70,7 +70,12 @@ function App() {
                     className="gridItem"
                     key={index}
                     onClick={() => setSection(item.projectTitle)}
-                    style={{ cursor: "pointer", borderStyle: "none" }}
+                    style={{
+                      cursor: "pointer",
+                      borderStyle: "none",
+                      width: "400px",
+                      height: "300px",
+                    }}
                   >
                     <div style={{ width: "400px", height: "300px" }}>
                       <img
@@ -85,18 +90,28 @@ function App() {
                     <div
                       style={{
                         color: "white",
-                        backgroundColor: `rgba(0,0,0,0.6)`,
                         position: "relative",
-                        top: "-190px",
+                        top: "-300px",
                         padding: "10px",
-                        width: "80%",
-                        margin: "auto",
+                        width: "400px",
+                        height: "300px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                       }}
                     >
-                      <div style={{ textAlign: "center" }}>
-                        <h2>{item.projectTitle}</h2>
+                      <div
+                        style={{
+                          backgroundColor: `rgba(0,0,0,0.6)`,
+                          width: "85%",
+                          padding: "10px",
+                        }}
+                      >
+                        <div style={{ textAlign: "center" }}>
+                          <h2>{item.projectTitle}</h2>
+                        </div>
+                        <p>{item.projectDescription}</p>
                       </div>
-                      <p>{item.projectDescription}</p>
                     </div>
                   </div>
                 );
