@@ -21,7 +21,7 @@ export const PhysicsSection = () => {
 
   return (
     <Section
-      color={[139, 0, 0]}
+      color={[255, 0, 0]}
       title={"PhySims"}
       titleBackgroundImage={"PhysicsBanner.jpeg"}
       firstSectionContent={
@@ -255,8 +255,10 @@ export const PhysicsSection = () => {
       }
       takeawaysContent={
         <div>
-          <p>There are several key takeaways I took from this project as a
-            designer and developer:</p>
+          <p>
+            There are several key takeaways I took from this project as a
+            designer and developer:
+          </p>
           <ul>
             <li>
               <b>Iterative Design:</b> Working on this project reinforced how
