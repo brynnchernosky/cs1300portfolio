@@ -41,7 +41,7 @@ function App() {
     {
       projectTitle: "Freestyle",
       projectDescription: "Researching use of soda machines in dining halls",
-      projectImage: "DrinkDispenserPhoto.png",
+      projectImage: "SodaCover.png",
     },
   ];
 
@@ -53,10 +53,7 @@ function App() {
             <h1 onClick={() => setSection("")} style={{ cursor: "pointer" }}>
               Jane Doe
             </h1>
-            <p>
-              Designer and frontend developer creating streamlined solutions for
-              any business need
-            </p>
+            <p>Student at Brown University | Designer and Developer</p>
           </div>
           <nav className="homepageNavigation">
             <div className="navBarElement" onClick={() => setSection("")}>
@@ -68,16 +65,41 @@ function App() {
           </nav>
         </header>
       </div>
-      {section == "" && (
+      {section == "About" && (
         <div className="sectionContainer">
           <div className="section">
-            <div className="gridOfProjects">
-              {sectionList.map((item, index) => {
+            <div style={{ width: "70%" }}>
+              <h2>About Me</h2>
+              <p>
+                I&apos;m a student at Brown University studying computer science
+                and economics. I specialize in designing and building
+                streamlined frontend experiences to meet any business need.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+      {section == "Avocademy" && <AvocademySection />}
+      {section == "PhySims" && <PhysicsSection />}
+      {section == "Sweet Shop" && <BakerySection />}
+      {section == "Todaylist" && <CraigslistSection />}
+      {section == "Freestyle" && <SodaSection />}
+      <div className="sectionContainer">
+        <div className="section">
+          <div className="gridOfProjects">
+            {sectionList
+              .filter((item, index) => {
+                return section != item.projectTitle;
+              })
+              .map((item, index) => {
                 return (
                   <div
                     className="gridItem"
                     key={index}
-                    onClick={() => setSection(item.projectTitle)}
+                    onClick={() => {
+                      setSection(item.projectTitle);
+                      window.scrollTo(0, 0);
+                    }}
                     style={{
                       cursor: "pointer",
                       borderStyle: "none",
@@ -124,30 +146,9 @@ function App() {
                   </div>
                 );
               })}
-            </div>
           </div>
         </div>
-      )}
-      {section == "About" && (
-        <div className="sectionContainer">
-          <div className="section">
-            <div style={{ width: "70%" }}>
-              <h2>About Me</h2>
-              <p>
-                I&apos;m a student at Brown University studying computer science
-                and economics. I specialize in designing and building
-                streamlined frontend experiences to meet any business need.
-              </p>
-              <p>TODO</p>
-            </div>
-          </div>
-        </div>
-      )}
-      {section == "Avocademy" && <AvocademySection />}
-      {section == "PhySims" && <PhysicsSection />}
-      {section == "Sweet Shop" && <BakerySection />}
-      {section == "Todaylist" && <CraigslistSection />}
-      {section == "Freestyle" && <SodaSection />}
+      </div>
     </div>
   );
 }

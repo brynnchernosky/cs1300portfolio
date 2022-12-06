@@ -607,7 +607,23 @@ export const CraigslistSection = () => {
       }
       takeawaysContent={
         <div>
-          <p>TODO</p>
+          <p>
+            There are several key takeaways I took from this project as a
+            designer and developer:
+          </p>
+          <ul>
+            <li>
+              <b>Responsive Design</b> From designing this webpage to display
+              well on a variety of platforms (mobile, tablet, and
+              laptop/desktop), I learned a lot about common paradigms for each
+              layout and how to most efficiently use media queries.
+            </li>
+            <li>
+              <b>Importance of Prototyping</b> Separating out the design from
+              the build process promotes efficiency. By having detailed
+              prototypes, it was very easy to build the final webpage.{" "}
+            </li>
+          </ul>
         </div>
       }
     />

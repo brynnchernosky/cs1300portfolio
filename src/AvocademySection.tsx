@@ -686,7 +686,25 @@ export const AvocademySection = () => {
       }
       takeawaysContent={
         <div>
-          <p>TODO</p>
+          <p>
+            There are several key takeaways I took from this project as a
+            designer and developer:
+          </p>
+          <ul>
+            <li>
+              <b>Developing an Initial Design:</b> Working on this project
+              reinforced how important it is to be creative and make initial
+              sketches as diverse as possible so that you can pick and choose
+              from their best elements to create a strong initial design.{" "}
+            </li>
+            <li>
+              <b>User Feedback</b> Working on this project also reinforced how
+              important it is to continuously iterate on your selected design
+              based on user feedback to ensure it&apos;s as strong as it can be,
+              as well as how important it is to receive feedback from many
+              different types of people.{" "}
+            </li>
+          </ul>
         </div>
       }
     />

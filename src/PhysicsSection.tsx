@@ -255,7 +255,8 @@ export const PhysicsSection = () => {
       }
       takeawaysContent={
         <div>
-          <br />
+          <p>There are several key takeaways I took from this project as a
+            designer and developer:</p>
           <ul>
             <li>
               <b>Iterative Design:</b> Working on this project reinforced how
