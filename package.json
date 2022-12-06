@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "homepage": "https://brynnchernosky.github.io/cs1300portfolio/",
   "private": true,
   "dependencies": {
     "@mui/material": "^5.10.16",
