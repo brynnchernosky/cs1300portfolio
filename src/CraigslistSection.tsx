@@ -187,7 +187,6 @@ export const CraigslistSection = () => {
           </p>
         </div>
       }
-      firstSectionCarousel={null}
       secondSectionTitle={"Low-Fidelity Prototypes"}
       secondSectionContent={
         <div>

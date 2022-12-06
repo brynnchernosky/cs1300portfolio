@@ -7,16 +7,12 @@ export interface ISectionProps {
   title: string;
   titleBackgroundImage: string;
   firstSectionContent: JSX.Element;
-  firstSectionCarousel:
-    | {
-        name: string;
-        image: string;
-      }[]
-    | null;
   secondSectionTitle: string;
   secondSectionContent: JSX.Element;
   thirdSectionTitle: string;
   thirdSectionContent: JSX.Element;
+  fourthSectionTitle?: string;
+  fourthSectionContent?: JSX.Element;
   finalDesignContent: JSX.Element;
   takeawaysContent: JSX.Element;
 }
@@ -27,11 +23,12 @@ export const Section = (props: ISectionProps) => {
     title,
     titleBackgroundImage,
     firstSectionContent,
-    firstSectionCarousel,
     secondSectionTitle,
     secondSectionContent,
     thirdSectionTitle,
     thirdSectionContent,
+    fourthSectionTitle,
+    fourthSectionContent,
     finalDesignContent,
     takeawaysContent,
   } = props;
@@ -78,36 +75,19 @@ export const Section = (props: ISectionProps) => {
         <h3>Overview</h3>
         {firstSectionContent}
         <br />
-        {firstSectionCarousel && (
-          <div>
-            <div
-              style={{
-                width: "90%",
-                margin: "auto",
-              }}
-            >
-              <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
-                {firstSectionCarousel.map((item, i) => (
-                  <Paper key={i}>
-                    {/* <p>
-                    <b>{item.name}</b>
-                  </p> */}
-                    <img src={item.image} style={{ width: "100%" }} />
-                  </Paper>
-                ))}
-              </Carousel>
-            </div>
-            <br />
-            <br />
-            <br />
-          </div>
-        )}
         <h3>{secondSectionTitle}</h3>
         {secondSectionContent}
         <br />
         <h3>{thirdSectionTitle}</h3>
         {thirdSectionContent}
         <br />
+        {fourthSectionContent != undefined && (
+          <div>
+            <h3>{fourthSectionTitle}</h3>
+            {fourthSectionContent}
+            <br />
+          </div>
+        )}
         <h3>Final Design</h3>
         {finalDesignContent}
         <br />

@@ -194,7 +194,6 @@ export const AvocademySection = () => {
           </p>
         </div>
       }
-      firstSectionCarousel={null}
       secondSectionTitle={"Low-Fidelity Prototypes"}
       secondSectionContent={
         <div>

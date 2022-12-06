@@ -6,6 +6,7 @@ import { PhysicsSection } from "./PhysicsSection";
 import { CraigslistSection } from "./CraigslistSection";
 import { BakerySection } from "./BakerySection";
 import { AvocademySection } from "./AvocademySection";
+import { SodaSection } from "./SodaSection";
 
 function App() {
   const [section, setSection] = useState<string>("");
@@ -25,17 +26,22 @@ function App() {
         "Teaching algebra-based mechanics to high school and college students",
       projectImage: "PhysicsCover.png",
     },
-    {
-      projectTitle: "Sweet Shop",
-      projectDescription:
-        "Bakery webpage highlighting the patisserie's sweet offerings",
-      projectImage: "RaspberryMacaron.png",
-    },
+    // {
+    //   projectTitle: "Sweet Shop",
+    //   projectDescription:
+    //     "Bakery webpage highlighting the patisserie's sweet offerings",
+    //   projectImage: "RaspberryMacaron.png",
+    // },
     {
       projectTitle: "Todaylist",
       projectDescription:
         "Redesigning the Craigslist webpage for the modern era",
       projectImage: "CraigslistCover.png",
+    },
+    {
+      projectTitle: "Freestyle",
+      projectDescription: "Researching use of soda machines in dining halls",
+      projectImage: "SodaCover.png",
     },
   ];
 
@@ -48,8 +54,8 @@ function App() {
               Jane Doe
             </h1>
             <p>
-              Frontend developer creating streamlined solutions for any business
-              need
+              Designer and frontend developer creating streamlined solutions for
+              any business need
             </p>
           </div>
           <nav className="homepageNavigation">
@@ -129,8 +135,8 @@ function App() {
               <h2>About Me</h2>
               <p>
                 I&apos;m a student at Brown University studying computer science
-                and economics. I specialize in creating streamlined frontend
-                experiences to meet any business need.
+                and economics. I specialize in designing and building
+                streamlined frontend experiences to meet any business need.
               </p>
               <p>TODO</p>
             </div>
@@ -141,6 +147,7 @@ function App() {
       {section == "PhySims" && <PhysicsSection />}
       {section == "Sweet Shop" && <BakerySection />}
       {section == "Todaylist" && <CraigslistSection />}
+      {section == "Freestyle" && <SodaSection />}
     </div>
   );
 }

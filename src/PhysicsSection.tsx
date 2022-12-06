@@ -6,15 +6,15 @@ import { Section } from "./Section";
 export const PhysicsSection = () => {
   const physicsCarousel = [
     {
-      name: "Freeform Mode",
+      caption: <div></div>,
       image: "FreeformScreenshot.png",
     },
     {
-      name: "Tutorial Mode",
+      caption: <div></div>,
       image: "TutorialScreenshot.png",
     },
     {
-      name: "Review Mode",
+      caption: <div></div>,
       image: "ReviewScreenshot.png",
     },
   ];
@@ -44,9 +44,41 @@ export const PhysicsSection = () => {
             various introductory mechanics topics in algebra-based physics
             courses.
           </p>
+          <div>
+            <div
+              style={{
+                width: "80%",
+                margin: "auto",
+              }}
+            >
+              <Carousel
+                autoPlay={false}
+                navButtonsAlwaysVisible={true}
+                sx={{ minHeight: "500px" }}
+              >
+                {physicsCarousel.map((item, i) => (
+                  <div key={i}>
+                    <Paper elevation={0}>
+                      <div
+                        style={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <img
+                          src={item.image}
+                          style={{
+                            maxHeight: "550px",
+                            minHeight: "500px",
+                          }}
+                        />
+                      </div>
+                      <div style={{ overflowY: "scroll" }}>{item.caption}</div>
+                    </Paper>
+                  </div>
+                ))}
+              </Carousel>
+            </div>
+          </div>
         </div>
       }
-      firstSectionCarousel={physicsCarousel}
       secondSectionTitle={"Background Research"}
       secondSectionContent={
         <div>

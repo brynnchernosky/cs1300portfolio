@@ -18,7 +18,6 @@ export const BakerySection = () => {
           </p>
         </div>
       }
-      firstSectionCarousel={null}
       secondSectionTitle={""}
       secondSectionContent={<div></div>}
       thirdSectionTitle={""}
