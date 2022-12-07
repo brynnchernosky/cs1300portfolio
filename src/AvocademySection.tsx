@@ -206,7 +206,7 @@ export const AvocademySection = () => {
       secondSectionTitle={"Low-Fidelity Prototypes"}
       secondSectionContent={
         <div>
-          <h4>Initial Sketches</h4>
+          <h4>Initial Sketch 1: Duolingo Inspired</h4>
           <p>
             Our first prototype was inspired by language-learning site Duolingo.
             It features a simple, organized structure with a focus on navigation
@@ -228,6 +228,7 @@ export const AvocademySection = () => {
             carouselElements={duolingoSketches}
           />
           <br />
+          <h4>Initial Sketch 2: CodinGame Inspired</h4>
           <p>
             Our second prototype was inspired by programming puzzle site
             CodinGame. It features a set of puzzles at different difficulty
@@ -250,6 +251,7 @@ export const AvocademySection = () => {
             ))}
           </Carousel> */}
           <br />
+          <h4>Initial Sketch 3: Khan Academy Inspired</h4>
           <p>
             Our third prototype was inspired by Khan Academy, one of the most
             popular online platforms for learning a variety of different
@@ -276,6 +278,7 @@ export const AvocademySection = () => {
             ))}
           </Carousel> */}
           <br />
+          <h4>Initial Sketch 4: Codecademy Inspired</h4>
           <p>
             Our fourth prototype was inspired by Codecademy, an online platform
             that offers coding classes for many different languages. It features

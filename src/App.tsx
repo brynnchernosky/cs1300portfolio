@@ -57,7 +57,7 @@ function App() {
           </div>
           <nav className="homepageNavigation">
             <div className="navBarElement" onClick={() => setSection("")}>
-              <p>Work</p>
+              <p>Projects</p>
             </div>
             <div className="navBarElement" onClick={() => setSection("About")}>
               <p>About Me</p>

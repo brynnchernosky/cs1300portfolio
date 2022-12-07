@@ -203,6 +203,7 @@ export const CraigslistSection = () => {
               onClick={() => {
                 setShowStandardLabels(!showStandardLabels);
               }}
+              style={{ margin: "5px" }}
             >
               Toggle labels
             </button>
@@ -289,6 +290,7 @@ export const CraigslistSection = () => {
               onClick={() => {
                 setShowMediumLabels(!showMediumLabels);
               }}
+              style={{ margin: "5px" }}
             >
               Toggle labels
             </button>
@@ -327,6 +329,7 @@ export const CraigslistSection = () => {
               onClick={() => {
                 setShowSmallLabels(!showSmallLabels);
               }}
+              style={{ margin: "5px" }}
             >
               Toggle labels
             </button>
@@ -407,6 +410,7 @@ export const CraigslistSection = () => {
               setShowStandardHighLabels(false);
               setShowStandardHighDivs(false);
             }}
+            style={{ margin: "5px" }}
           >
             Show content only
           </button>
@@ -415,6 +419,7 @@ export const CraigslistSection = () => {
               setShowStandardHighLabels(true);
               setShowStandardHighDivs(false);
             }}
+            style={{ margin: "5px" }}
           >
             Show element labels
           </button>
@@ -423,6 +428,7 @@ export const CraigslistSection = () => {
               setShowStandardHighLabels(false);
               setShowStandardHighDivs(true);
             }}
+            style={{ margin: "5px" }}
           >
             Show div labels
           </button>
@@ -456,6 +462,7 @@ export const CraigslistSection = () => {
               setShowMediumHighLabels(false);
               setShowMediumHighDivs(false);
             }}
+            style={{ margin: "5px" }}
           >
             Show content only
           </button>
@@ -464,6 +471,7 @@ export const CraigslistSection = () => {
               setShowMediumHighLabels(true);
               setShowMediumHighDivs(false);
             }}
+            style={{ margin: "5px" }}
           >
             Show element labels
           </button>
@@ -472,6 +480,7 @@ export const CraigslistSection = () => {
               setShowMediumHighLabels(false);
               setShowMediumHighDivs(true);
             }}
+            style={{ margin: "5px" }}
           >
             Show div labels
           </button>
@@ -505,6 +514,7 @@ export const CraigslistSection = () => {
               setShowSmallHighLabels(false);
               setShowSmallHighDivs(false);
             }}
+            style={{ margin: "5px" }}
           >
             Show content only
           </button>
@@ -513,6 +523,7 @@ export const CraigslistSection = () => {
               setShowSmallHighLabels(true);
               setShowSmallHighDivs(false);
             }}
+            style={{ margin: "5px" }}
           >
             Show element labels
           </button>
@@ -521,6 +532,7 @@ export const CraigslistSection = () => {
               setShowSmallHighLabels(false);
               setShowSmallHighDivs(true);
             }}
+            style={{ margin: "5px" }}
           >
             Show div labels
           </button>
