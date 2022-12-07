@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Carousel from "react-material-ui-carousel";
+import { Carousel } from "./Carousel";
 import { Section } from "./Section";
 import { createTheme } from "@mui/material/styles";
 import {
@@ -31,40 +31,49 @@ export const AvocademySection = () => {
 
   const duolingoSketches = [
     {
-      name: "Homepage",
+      caption: "",
       image: "DuolingoHomepage.png",
+      altText: "Homepage designed to look like Duolingo",
     },
     {
-      name: "Module Selection",
+      caption: "",
       image: "DuolingoModules.png",
+      altText: "Module selection ppage designed to look like Duolingo",
     },
     {
-      name: "Topic Selection",
+      caption: "",
       image: "DuolingoTasks.png",
+      altText: "Topic selection page designed to look like Duolingo",
     },
     {
-      name: "Example Question",
+      caption: "",
       image: "DuolingoQuestion.png",
+      altText: "Question page designed to look like Duolingo",
     },
     {
-      name: "Example Question",
+      caption: "",
       image: "DuolingoQuestion2.png",
+      altText: "Question page designed to look like Duolingo",
     },
     {
-      name: "Mentor Meeting Scheduling",
+      caption: "",
       image: "DuolingoMentor.png",
+      altText: "Meeting scheduling page designed to look like Duolingo",
     },
     {
-      name: "Mentor Meeting Scheduling",
+      caption: "",
       image: "DuolingoSchedule.png",
+      altText: "Meeting scheduling page designed to look like Duolingo",
     },
     {
-      name: "Project Ideas",
+      caption: "",
       image: "DuolingoProject.png",
+      altText: "Project ideas page designed to look like Duolingo",
     },
     {
-      name: "Project Ideas",
+      caption: "",
       image: "DuolingoPrompts.png",
+      altText: "Project ideas page designed to look like Duolingo",
     },
   ];
 
@@ -213,13 +222,11 @@ export const AvocademySection = () => {
             ideas workflow.
           </p>
           <br />
-          <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
-            {duolingoSketches.map((item, i) => (
-              <Paper key={i}>
-                <img src={item.image} style={{ width: "100%" }} />
-              </Paper>
-            ))}
-          </Carousel>
+          <Carousel
+            height={448 * 1.2}
+            width={673 * 1.2}
+            carouselElements={duolingoSketches}
+          />
           <br />
           <p>
             Our second prototype was inspired by programming puzzle site
@@ -235,13 +242,13 @@ export const AvocademySection = () => {
             puzzle.
           </p>
           <br />
-          <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
+          {/* <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
             {codinGameSketches.map((item, i) => (
               <Paper key={i}>
                 <img src={item.image} style={{ width: "100%" }} />
               </Paper>
             ))}
-          </Carousel>
+          </Carousel> */}
           <br />
           <p>
             Our third prototype was inspired by Khan Academy, one of the most
@@ -261,13 +268,13 @@ export const AvocademySection = () => {
             topic view for an activity of a module.
           </p>
           <br />
-          <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
+          {/* <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
             {khanSketches.map((item, i) => (
               <Paper key={i}>
                 <img src={item.image} style={{ width: "100%" }} />
               </Paper>
             ))}
-          </Carousel>
+          </Carousel> */}
           <br />
           <p>
             Our fourth prototype was inspired by Codecademy, an online platform
@@ -281,13 +288,13 @@ export const AvocademySection = () => {
             page, and editor page for an activity of a module.
           </p>
           <br />
-          <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
+          {/* <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
             {codecademySketches.map((item, i) => (
               <Paper key={i}>
                 <img src={item.image} style={{ width: "100%" }} />
               </Paper>
             ))}
-          </Carousel>
+          </Carousel> */}
           <h4>Final Sketch</h4>
           <p>
             For our final sketch, we opted to combine elements from each of the
@@ -304,13 +311,13 @@ export const AvocademySection = () => {
             the project ideas workflow.
           </p>
           <br />
-          <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
+          {/* <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
             {finalSketches.map((item, i) => (
               <Paper key={i}>
                 <img src={item.image} style={{ width: "100%" }} />
               </Paper>
             ))}
-          </Carousel>
+          </Carousel> */}
         </div>
       }
       thirdSectionTitle={"High-Fidelity Prototype"}
@@ -490,24 +497,22 @@ export const AvocademySection = () => {
           </p>
           <br />
           <p>The following post-test questions were asked to the users:</p>
-          <p>
-            <ul>
-              <li>What frustrated you most about this site?</li>
-              <li>If you had a magic wand, how would you improve this site?</li>
-              <li>What did you like about the site?</li>
-              <li>
-                How likely are you to recommend this site to a friend or
-                colleague (0=Not at all likely, and 10=Very likely)?
-              </li>
-            </ul>
-          </p>
+          <ul>
+            <li>What frustrated you most about this site?</li>
+            <li>If you had a magic wand, how would you improve this site?</li>
+            <li>What did you like about the site?</li>
+            <li>
+              How likely are you to recommend this site to a friend or colleague
+              (0=Not at all likely, and 10=Very likely)?
+            </li>
+          </ul>
           <br />
           <h5>Results</h5>
           <p>
             Videos of each user&apos;s performance on the tasks are shown below:
           </p>
           <br />
-          <Grid container spacing={2}>
+          {/* <Grid container spacing={2}>
             <Grid
               item
               xs={12}
@@ -632,7 +637,7 @@ export const AvocademySection = () => {
                 </CardContent>
               </Card>
             </Grid>
-          </Grid>
+          </Grid> */}
           <br />
           <h5>Analysis</h5>
           <ul>
