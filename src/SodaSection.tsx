@@ -44,7 +44,7 @@ export const SodaSection = () => {
 
   return (
     <Section
-      color={[255, 60, 70]}
+      color={[227, 55, 55]}
       title={"Freestyle"}
       titleBackgroundImage={"SodaBanner.jpeg"}
       firstSectionContent={

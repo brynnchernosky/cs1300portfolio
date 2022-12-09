@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Carousel.css";
+import { IconButton } from "@mui/material";
 import PlayCircleFilledWhiteOutlinedIcon from "@mui/icons-material/PlayCircleFilledWhiteOutlined";
 export interface ICarouselProps {
   height: number;
@@ -84,6 +85,27 @@ export const Carousel = (props: ICarouselProps) => {
         </div>
       </div>
       {caption != "" && <div id="caption">{caption}</div>}
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        {carouselElements.map((element, index) => {
+          return (
+            <div key={index}>
+              <IconButton
+                onClick={() => {
+                  updateCenterImage(index);
+                  setCenterImageIndex(index);
+                }}
+                sx={{
+                  backgroundColor:
+                    centerImageIndex == index ? "gray" : "lightgray",
+                  height: "30px",
+                  width: "30px",
+                  margin: "10px",
+                }}
+              ></IconButton>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

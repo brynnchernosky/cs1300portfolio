@@ -68,17 +68,72 @@ function App() {
       {section == "About" && (
         <div className="sectionContainer">
           <div className="section">
-            <div style={{ width: "70%" }}>
-              <h2>Hi! I&apos;m Jane</h2>
-              <p>
-                I&apos;m a student at Brown University studying computer science
-                and economics. I specialize in designing and building
-                streamlined frontend experiences to meet any business need.
-              </p>
-              <br />
-              <p>
-                You can reach me at <a href="">myemail@gmail.com</a>
-              </p>
+            <div
+              className="sectionHeader"
+              style={{ height: "9em", width: "100%" }}
+            >
+              <div
+                style={{
+                  width: "100%",
+                  height: "9em",
+                  backgroundColor: "rgb(" + 161 + "," + 0 + "," + 58 + ")",
+                }}
+              >
+                <img
+                  src="AboutBanner.jpeg"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "top",
+                    opacity: 0.5,
+                  }}
+                />
+              </div>
+              <div
+                style={{
+                  width: "100%",
+                  height: "9em",
+                  padding: "1em",
+                  display: "flex",
+                  alignItems: "center",
+                  position: "relative",
+                  color: "white",
+                  top: "-9em",
+                }}
+              >
+                <h2>About Me</h2>
+              </div>
+            </div>
+            <br />
+            <div style={{ display: "flex", justifyContent: "space-around" }}>
+              <div style={{ width: "60%" }}>
+                <h3>Hi! I&apos;m Jane</h3>
+                <p>
+                  I&apos;m a student at Brown University studying computer
+                  science. I specialize in designing and building{" "}
+                  <b>streamlined frontend experiences</b>, with a focus on{" "}
+                  <b>young adult audiences</b>. I&apos;ve designed experiences
+                  for everything from learning algebra-based physics to posting
+                  classified advertisements.
+                </p>
+                <br />
+                <p>
+                  I&apos;m experienced with the <b>MERN stack</b> (MongoDB,
+                  Express, React, Node), as well as design platforms{" "}
+                  <b>Figma</b> and <b>Balsamiq</b>.
+                </p>
+                <br />
+                <p>
+                  You can reach me at <a href="">myemail@gmail.com</a>
+                </p>
+              </div>
+              <div style={{ width: "30%" }}>
+                <img
+                  src="ProfilePhoto.jpeg"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </div>
             </div>
           </div>
         </div>
