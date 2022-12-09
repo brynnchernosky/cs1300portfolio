@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Carousel from "react-material-ui-carousel";
+import { Carousel } from "./Carousel";
 import { Paper } from "@mui/material";
 import { Section } from "./Section";
 
@@ -8,14 +8,17 @@ export const PhysicsSection = () => {
     {
       caption: <div></div>,
       image: "FreeformScreenshot.png",
+      altText: "simulation freeform mode",
     },
     {
       caption: <div></div>,
       image: "TutorialScreenshot.png",
+      altText: "simulation tutorial mode",
     },
     {
       caption: <div></div>,
       image: "ReviewScreenshot.png",
+      altText: "simulation review mode",
     },
   ];
 
@@ -52,29 +55,10 @@ export const PhysicsSection = () => {
               }}
             >
               <Carousel
-                autoPlay={false}
-                navButtonsAlwaysVisible={true}
-                sx={{ minHeight: "500px" }}
-              >
-                {physicsCarousel.map((item, i) => (
-                  <div key={i}>
-                    <Paper elevation={0}>
-                      <div
-                        style={{ display: "flex", justifyContent: "center" }}
-                      >
-                        <img
-                          src={item.image}
-                          style={{
-                            maxHeight: "550px",
-                            minHeight: "500px",
-                          }}
-                        />
-                      </div>
-                      <div style={{ overflowY: "scroll" }}>{item.caption}</div>
-                    </Paper>
-                  </div>
-                ))}
-              </Carousel>
+                height={577 * 0.7}
+                width={1170 * 0.9}
+                carouselElements={physicsCarousel}
+              />
             </div>
           </div>
         </div>
