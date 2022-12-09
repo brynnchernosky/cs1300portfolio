@@ -79,77 +79,93 @@ export const AvocademySection = () => {
 
   const khanSketches = [
     {
-      name: "Homepage",
+      altText: "Homepage designed to look like Khan Academy",
       image: "KhanHome.png",
+      caption: "",
     },
     {
-      name: "Module Selection",
+      altText: "Module Selection designed to look like Khan Academy",
       image: "KhanModule.png",
+      caption: "",
     },
     {
-      name: "Topic Selection",
+      altText: "Topic Selection designed to look like Khan Academy",
       image: "KhanSection.png",
+      caption: "",
     },
   ];
 
   const codecademySketches = [
     {
-      name: "Homepage",
+      altText: "Homepage designed to look like Codecademy",
       image: "CodecademyHome.png",
+      caption: "",
     },
     {
-      name: "Course Selection",
+      altText: "Course Selection page designed to look like Codecademy",
       image: "CodecademyCourse.png",
+      caption: "",
     },
     {
-      name: "Module Selection",
+      altText: "Module Selection page designed to look like Codecademy",
       image: "CodecademyModule.png",
+      caption: "",
     },
   ];
 
   const codinGameSketches = [
     {
-      name: "Module Selection",
+      altText: "Module Selection page designed to look like CodinGames",
       image: "CodingameModuleSelectionPage.png",
+      caption: "",
     },
     {
-      name: "Editor Page",
+      altText: "Editor Page page designed to look like CodinGames",
       image: "CodingameEditorPage.png",
+      caption: "",
     },
     {
-      name: "Prototyping Page",
+      altText: "Prototyping Page page designed to look like CodinGames",
       image: "CodingamePrototypingPage.png",
+      caption: "",
     },
   ];
 
   const finalSketches = [
     {
-      name: "Homepage",
+      altText: "Homepage",
       image: "FinalHomepage.png",
+      caption: "",
     },
     {
-      name: "Topic Selection",
+      altText: "Topic Selection page",
       image: "FinalModule.png",
+      caption: "",
     },
     {
-      name: "Example Task",
+      altText: "Example Task page",
       image: "FinalLesson.png",
+      caption: "",
     },
     {
-      name: "Mentor Meeting Scheduling",
+      altText: "Mentor Meeting Scheduling page",
       image: "FinalMentor.png",
+      caption: "",
     },
     {
-      name: "Mentor Meeting Scheduling",
+      altText: "Mentor Meeting Scheduling page",
       image: "FinalSchedule.png",
+      caption: "",
     },
     {
-      name: "Project Ideas",
+      altText: "Project Ideas page",
       image: "FinalProject.png",
+      caption: "",
     },
     {
-      name: "Project Ideas",
+      altText: "Project Ideas page",
       image: "FinalPrompt.png",
+      caption: "",
     },
   ];
 
@@ -243,13 +259,11 @@ export const AvocademySection = () => {
             puzzle.
           </p>
           <br />
-          {/* <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
-            {codinGameSketches.map((item, i) => (
-              <Paper key={i}>
-                <img src={item.image} style={{ width: "100%" }} />
-              </Paper>
-            ))}
-          </Carousel> */}
+          <Carousel
+            height={448 * 1.2}
+            width={673 * 1.2}
+            carouselElements={codinGameSketches}
+          />
           <br />
           <h4>Initial Sketch 3: Khan Academy Inspired</h4>
           <p>
@@ -270,13 +284,11 @@ export const AvocademySection = () => {
             topic view for an activity of a module.
           </p>
           <br />
-          {/* <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
-            {khanSketches.map((item, i) => (
-              <Paper key={i}>
-                <img src={item.image} style={{ width: "100%" }} />
-              </Paper>
-            ))}
-          </Carousel> */}
+          <Carousel
+            height={448 * 1.2}
+            width={673 * 1.2}
+            carouselElements={khanSketches}
+          />
           <br />
           <h4>Initial Sketch 4: Codecademy Inspired</h4>
           <p>
@@ -291,13 +303,11 @@ export const AvocademySection = () => {
             page, and editor page for an activity of a module.
           </p>
           <br />
-          {/* <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
-            {codecademySketches.map((item, i) => (
-              <Paper key={i}>
-                <img src={item.image} style={{ width: "100%" }} />
-              </Paper>
-            ))}
-          </Carousel> */}
+          <Carousel
+            height={448 * 1.2}
+            width={673 * 1.2}
+            carouselElements={codecademySketches}
+          />
           <h4>Final Sketch</h4>
           <p>
             For our final sketch, we opted to combine elements from each of the
@@ -314,13 +324,11 @@ export const AvocademySection = () => {
             the project ideas workflow.
           </p>
           <br />
-          {/* <Carousel autoPlay={false} navButtonsAlwaysVisible={true}>
-            {finalSketches.map((item, i) => (
-              <Paper key={i}>
-                <img src={item.image} style={{ width: "100%" }} />
-              </Paper>
-            ))}
-          </Carousel> */}
+          <Carousel
+            height={448 * 1.2}
+            width={673 * 1.2}
+            carouselElements={finalSketches}
+          />
         </div>
       }
       thirdSectionTitle={"High-Fidelity Prototype"}
@@ -515,7 +523,7 @@ export const AvocademySection = () => {
             Videos of each user&apos;s performance on the tasks are shown below:
           </p>
           <br />
-          {/* <Grid container spacing={2}>
+          <Grid container spacing={2}>
             <Grid
               item
               xs={12}
@@ -529,13 +537,11 @@ export const AvocademySection = () => {
                   src="https://www.youtube.com/embed/dClXKhpQKp4"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    User 1
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <div>
+                    <h4>User 1</h4>
                     <ul>
                       <li>
-                        User was easily able to navigate to lesson page and
+                        User was able to easily navigate to lesson page and
                         submit work
                       </li>
                       <li>
@@ -551,9 +557,8 @@ export const AvocademySection = () => {
                         indicating which page the user would be navigating to
                         when clicking on a link
                       </li>
-                      <li>Was in line with expectations!</li>
                     </ul>
-                  </Typography>
+                  </div>
                 </CardContent>
               </Card>
             </Grid>
@@ -570,14 +575,12 @@ export const AvocademySection = () => {
                   src="https://www.youtube.com/embed/CKoLWWJvup4"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    User 2
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <div>
+                    <h4>User 2</h4>
                     <ul>
                       <li>
                         User was able to navigate to lesson page and submit
-                        work, though was not confident that the submission was
+                        work, but was not confident that the submission was
                         successful
                       </li>
                       <li>
@@ -592,9 +595,8 @@ export const AvocademySection = () => {
                         Further indication of the success of the submission
                         would be helpful
                       </li>
-                      <li>Was in line with expectations!</li>
                     </ul>
-                  </Typography>
+                  </div>
                 </CardContent>
               </Card>
             </Grid>
@@ -611,10 +613,8 @@ export const AvocademySection = () => {
                   src="https://www.youtube.com/embed/Q6TDsTGgdew"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    User 3
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <div>
+                    <h4>User 3</h4>
                     <ul>
                       <li>
                         User initially attempted to navigate to the course
@@ -634,13 +634,12 @@ export const AvocademySection = () => {
                         Improved highlighting and emphasis of in-progress
                         courses could help users quickly resume their work
                       </li>
-                      <li>Was in line with expectations!</li>
                     </ul>
-                  </Typography>
+                  </div>
                 </CardContent>
               </Card>
             </Grid>
-          </Grid> */}
+          </Grid>
           <br />
           <h5>Analysis</h5>
           <ul>

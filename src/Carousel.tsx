@@ -70,6 +70,7 @@ export const Carousel = (props: ICarouselProps) => {
             margin: 0,
             padding: 0,
           }}
+          aria-label={"go to previous image"}
         >
           <img src={centerImage} alt={centerAlt} id="centerImage" />
         </div>
@@ -81,6 +82,7 @@ export const Carousel = (props: ICarouselProps) => {
               marginTop: "15px",
               padding: 0,
             }}
+            aria-label={"go to next image"}
           />
         </div>
       </div>
@@ -97,10 +99,10 @@ export const Carousel = (props: ICarouselProps) => {
                 sx={{
                   backgroundColor:
                     centerImageIndex == index ? "gray" : "lightgray",
-                  height: "30px",
-                  width: "30px",
                   margin: "10px",
                 }}
+                size="large"
+                aria-label={"go to image number " + index.toString()}
               ></IconButton>
             </div>
           );
