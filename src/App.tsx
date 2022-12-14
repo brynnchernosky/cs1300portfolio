@@ -7,6 +7,15 @@ import { CraigslistSection } from "./CraigslistSection";
 import { BakerySection } from "./BakerySection";
 import { AvocademySection } from "./AvocademySection";
 import { SodaSection } from "./SodaSection";
+import {
+  IconButton,
+  Popover,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemButton,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 function App() {
   const [section, setSection] = useState<string>("");
@@ -44,11 +53,310 @@ function App() {
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
+    window.scrollTo(0, 0);
   }, []);
+
+  const [anchor, setAnchor] = useState<HTMLButtonElement | null>(null);
 
   return (
     <div className="webpage">
       <div className="homepage">
+        <div style={{ zIndex: 5001 }}>
+          {(section == "Avocademy" || section == "Craigslist") && (
+            <div>
+              <IconButton
+                color="inherit"
+                onClick={(e) => {
+                  setAnchor(e.currentTarget);
+                }}
+              >
+                <MenuIcon fontSize="large" />
+              </IconButton>
+              <Popover
+                open={Boolean(anchor)}
+                anchorEl={anchor}
+                onClose={() => setAnchor(null)}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+              >
+                <List>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        window.scroll(0, 0);
+                        setAnchor(null);
+                      }}
+                    >
+                      <ListItemText primary="Overview" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        if (document) {
+                          const el = document.getElementById("secondSection");
+                          if (el) {
+                            el.scrollIntoView();
+                          }
+                          window.scrollBy(0, -160);
+                          setAnchor(null);
+                        }
+                      }}
+                    >
+                      <ListItemText primary="Low-Fidelity Prototypes" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        if (document) {
+                          const el = document.getElementById("thirdSection");
+                          if (el) {
+                            el.scrollIntoView();
+                          }
+                          window.scrollBy(0, -160);
+                          setAnchor(null);
+                        }
+                      }}
+                    >
+                      <ListItemText primary="High-Fidelity Prototype" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        if (document) {
+                          const el = document.getElementById("finalSection");
+                          if (el) {
+                            el.scrollIntoView();
+                          }
+                          window.scrollBy(0, -160);
+                          setAnchor(null);
+                        }
+                      }}
+                    >
+                      <ListItemText primary="Final Design" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        if (document) {
+                          const el = document.getElementById("takeawaySection");
+                          if (el) {
+                            el.scrollIntoView();
+                          }
+                          window.scrollBy(0, -160);
+                          setAnchor(null);
+                        }
+                      }}
+                    >
+                      <ListItemText primary="Takeaways" />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
+              </Popover>
+            </div>
+          )}
+          {section == "PhySims" && (
+            <div>
+              <IconButton
+                color="inherit"
+                onClick={(e) => {
+                  setAnchor(e.currentTarget);
+                }}
+              >
+                <MenuIcon fontSize="large" />
+              </IconButton>
+              <Popover
+                open={Boolean(anchor)}
+                anchorEl={anchor}
+                onClose={() => setAnchor(null)}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+              >
+                <List>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        window.scroll(0, 0);
+                        setAnchor(null);
+                      }}
+                    >
+                      <ListItemText primary="Overview" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        if (document) {
+                          const el = document.getElementById("secondSection");
+                          if (el) {
+                            el.scrollIntoView();
+                          }
+                          window.scrollBy(0, -160);
+                          setAnchor(null);
+                        }
+                      }}
+                    >
+                      <ListItemText primary="Research" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        if (document) {
+                          const el = document.getElementById("thirdSection");
+                          if (el) {
+                            el.scrollIntoView();
+                          }
+                          window.scrollBy(0, -160);
+                          setAnchor(null);
+                        }
+                      }}
+                    >
+                      <ListItemText primary="Design Process" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        if (document) {
+                          const el = document.getElementById("finalSection");
+                          if (el) {
+                            el.scrollIntoView();
+                          }
+                          window.scrollBy(0, -160);
+                          setAnchor(null);
+                        }
+                      }}
+                    >
+                      <ListItemText primary="Final Design" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        if (document) {
+                          const el = document.getElementById("takeawaySection");
+                          if (el) {
+                            el.scrollIntoView();
+                          }
+                          window.scrollBy(0, -160);
+                          setAnchor(null);
+                        }
+                      }}
+                    >
+                      <ListItemText primary="Takeaways" />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
+              </Popover>
+            </div>
+          )}
+          {section == "Freestyle" && (
+            <div>
+              <IconButton
+                color="inherit"
+                onClick={(e) => {
+                  setAnchor(e.currentTarget);
+                }}
+              >
+                <MenuIcon fontSize="large" />
+              </IconButton>
+              <Popover
+                open={Boolean(anchor)}
+                anchorEl={anchor}
+                onClose={() => setAnchor(null)}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+              >
+                <List>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        window.scroll(0, 0);
+                        setAnchor(null);
+                      }}
+                    >
+                      <ListItemText primary="Overview" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        if (document) {
+                          const el = document.getElementById("secondSection");
+                          if (el) {
+                            el.scrollIntoView();
+                          }
+                          window.scrollBy(0, -160);
+                          setAnchor(null);
+                        }
+                      }}
+                    >
+                      <ListItemText primary="Observations" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        if (document) {
+                          const el = document.getElementById("thirdSection");
+                          if (el) {
+                            el.scrollIntoView();
+                          }
+                          window.scrollBy(0, -160);
+                          setAnchor(null);
+                        }
+                      }}
+                    >
+                      <ListItemText primary="Interviews" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        if (document) {
+                          const el = document.getElementById("fourthSection");
+                          if (el) {
+                            el.scrollIntoView();
+                          }
+                          window.scrollBy(0, -160);
+                          setAnchor(null);
+                        }
+                      }}
+                    >
+                      <ListItemText primary="Personas" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        if (document) {
+                          const el = document.getElementById("takeawaySection");
+                          if (el) {
+                            el.scrollIntoView();
+                          }
+                          window.scrollBy(0, -160);
+                          setAnchor(null);
+                        }
+                      }}
+                    >
+                      <ListItemText primary="Takeaways" />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
+              </Popover>
+            </div>
+          )}
+        </div>
         <header className="homepageHeader">
           <div>
             {width < 575 && (

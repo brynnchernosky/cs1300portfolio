@@ -72,16 +72,19 @@ export const Section = (props: ISectionProps) => {
           </div>
         </div>
         <br />
+        <div id="firstSection" />
         <h3>Overview</h3>
         {firstSectionContent}
         <br />
         <br />
         <br />
+        <div id="secondSection" />
         <h3>{secondSectionTitle}</h3>
         {secondSectionContent}
         <br />
         <br />
         <br />
+        <div id="thirdSection" />
         <h3>{thirdSectionTitle}</h3>
         {thirdSectionContent}
         <br />
@@ -89,6 +92,7 @@ export const Section = (props: ISectionProps) => {
         <br />
         {fourthSectionContent != undefined && (
           <div>
+            <div id="fourthSection" />
             <h3>{fourthSectionTitle}</h3>
             {fourthSectionContent}
             <br />
@@ -98,6 +102,7 @@ export const Section = (props: ISectionProps) => {
         )}
         {finalDesignContent && (
           <div>
+            <div id="finalSection" />
             <h3>Final Design</h3>
             {finalDesignContent}
             <br />
@@ -105,6 +110,7 @@ export const Section = (props: ISectionProps) => {
             <br />
           </div>
         )}
+        <div id="takeawaySection" />
         <h3>Takeaways</h3>
         {takeawaysContent}
       </div>

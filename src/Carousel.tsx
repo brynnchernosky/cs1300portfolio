@@ -51,14 +51,20 @@ export const Carousel = (props: ICarouselProps) => {
   }, []);
 
   return (
-    <div id="carousel">
+    <div id="carousel" style={{ zIndex: 0 }}>
       <div id="imageSelection">
         <div
           onClick={decrementCenterIndex}
           style={{ transform: "rotate(180deg)" }}
         >
           <PlayCircleFilledWhiteOutlinedIcon
-            sx={{ fontSize: "50px", cursor: "pointer", margin: 0, padding: 0 }}
+            sx={{
+              fontSize: "50px",
+              cursor: "pointer",
+              zIndex: 5,
+              margin: 0,
+              padding: 0,
+            }}
           />
         </div>
         <div
@@ -79,6 +85,7 @@ export const Carousel = (props: ICarouselProps) => {
             sx={{
               fontSize: "50px",
               cursor: "pointer",
+              zIndex: 5,
               marginTop: "15px",
               padding: 0,
             }}
