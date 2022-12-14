@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.scss";
 import { isTemplateExpression } from "typescript";
@@ -17,48 +17,75 @@ function App() {
   }[] = [
     {
       projectTitle: "Avocademy",
-      projectDescription: "Online learning modules to teach UI/UX design",
+      projectDescription:
+        "Teaching user interface design through learning modules",
       projectImage: "AvocademyCover.png",
     },
     {
       projectTitle: "PhySims",
       projectDescription:
-        "Teaching algebra-based mechanics to high school and college students",
+        "Teaching algebra-based mechanics through physics simulations",
       projectImage: "PhysicsCover.png",
     },
-    // {
-    //   projectTitle: "Sweet Shop",
-    //   projectDescription:
-    //     "Bakery webpage highlighting the patisserie's sweet offerings",
-    //   projectImage: "RaspberryMacaron.png",
-    // },
     {
       projectTitle: "Craigslist",
       projectDescription:
-        "Redesigning the Craigslist webpage for the modern era",
+        "Redesigning the Craigslist webpage for a modern audience",
       projectImage: "CraigslistCover.png",
     },
     {
       projectTitle: "Freestyle",
-      projectDescription: "Researching use of soda machines in dining halls",
+      projectDescription:
+        "Researching college students' use of dining hall soda machines",
       projectImage: "SodaCover.png",
     },
   ];
+
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+  }, []);
 
   return (
     <div className="webpage">
       <div className="homepage">
         <header className="homepageHeader">
           <div>
-            <h1 onClick={() => setSection("")} style={{ cursor: "pointer" }}>
-              Jane Doe
-            </h1>
-            {window.matchMedia("(min-width: 500px)").matches && (
+            {width < 575 && (
+              <h1
+                onClick={() => {
+                  setSection("About");
+                  window.scrollTo(0, 0);
+                }}
+                style={{ cursor: "pointer" }}
+              >
+                Jane
+              </h1>
+            )}
+            {width >= 575 && (
+              <h1
+                onClick={() => {
+                  setSection("About");
+                  window.scrollTo(0, 0);
+                }}
+                style={{ cursor: "pointer" }}
+              >
+                Jane Doe
+              </h1>
+            )}
+
+            {width >= 840 && (
               <p>Student at Brown University | Designer and Developer</p>
             )}
           </div>
           <nav className="homepageNavigation">
-            <div className="navBarElement" onClick={() => setSection("")}>
+            <div
+              className="navBarElement"
+              onClick={() => {
+                setSection("");
+                window.scrollTo(0, 0);
+              }}
+            >
               <p>Projects</p>
             </div>
             <div
